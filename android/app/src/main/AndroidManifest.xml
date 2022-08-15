@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pdf">
+    package="com.example.pdf_creator">
    <application
-        android:label="pdf"
+        android:label="pdf_creator"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

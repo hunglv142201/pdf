@@ -1,6 +1,6 @@
 {
-    "name": "pdf",
-    "short_name": "pdf",
+    "name": "pdf_creator",
+    "short_name": "pdf_creator",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

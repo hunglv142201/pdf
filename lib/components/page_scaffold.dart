@@ -14,12 +14,10 @@ class PageScaffold extends StatelessWidget {
       navigationBar: CupertinoNavigationBar(middle: Text(title)),
       child: GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-        child: CustomScrollView(
-          slivers: [
-            SliverFillRemaining(
-              child: SafeArea(
-                child: body,
-              ),
+        child: ListView(
+          children: [
+            SafeArea(
+              child: body,
             ),
           ],
         ),

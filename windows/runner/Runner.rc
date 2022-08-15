@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "pdf" "\0"
+            VALUE "FileDescription", "pdf_creator" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "pdf" "\0"
+            VALUE "InternalName", "pdf_creator" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "pdf.exe" "\0"
-            VALUE "ProductName", "pdf" "\0"
+            VALUE "OriginalFilename", "pdf_creator.exe" "\0"
+            VALUE "ProductName", "pdf_creator" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

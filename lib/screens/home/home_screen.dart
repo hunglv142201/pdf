@@ -1,11 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:pdf/components/app_text_form_field.dart';
-import 'package:pdf/components/page_scaffold.dart';
-import 'package:pdf/screens/home/home_screen.controller.dart';
+import 'package:pdf_creator/components/app_text_form_field.dart';
+import 'package:pdf_creator/components/page_scaffold.dart';
+import 'package:pdf_creator/screens/home/home_screen.controller.dart';
+import 'package:pdf_creator/screens/pdf_viewer/pdf_viewer_screen.props.dart';
+
+import 'home_screen.props.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key, required this.props}) : super(key: key);
+
+  final HomeScreenProps props;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +30,7 @@ class HomeScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(4),
                   child: AppTextFormField(
                     placeholder: 'Enter title',
-                    backgroundColor: CupertinoColors.white,
+                    backgroundColor: CupertinoColors.systemGroupedBackground,
                     controller: homeScreenController.titleFormFieldController,
                     validator: homeScreenController.titleFormFieldValidator,
                   ),
@@ -34,7 +39,7 @@ class HomeScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(4),
                   child: AppTextFormField(
                     placeholder: 'Enter first name',
-                    backgroundColor: CupertinoColors.white,
+                    backgroundColor: CupertinoColors.systemGroupedBackground,
                     controller: homeScreenController.firstNameFormFieldController,
                     validator: homeScreenController.firstNameFormFieldValidator,
                   ),
@@ -43,7 +48,7 @@ class HomeScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(4),
                   child: AppTextFormField(
                     placeholder: 'Enter last name',
-                    backgroundColor: CupertinoColors.white,
+                    backgroundColor: CupertinoColors.systemGroupedBackground,
                     controller: homeScreenController.lastNameFormFieldController,
                     validator: homeScreenController.lastFormFieldValidator,
                   ),
@@ -52,8 +57,24 @@ class HomeScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(16),
                   child: CupertinoButton.filled(
                     onPressed: homeScreenController.handleFormSubmit,
-                    child: const Text("Confirm"),
+                    child: const Text('Confirm'),
                   ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Obx(() {
+                    if (homeScreenController.base64.value == null) {
+                      return Container();
+                    }
+                    if (homeScreenController.isLoading.value) {
+                      return const CupertinoActivityIndicator();
+                    }
+                    return CupertinoButton.filled(
+                      child: const Text('View'),
+                      onPressed: () => Navigator.of(context).pushNamed('pdf_viewer',
+                          arguments: PdfViewerScreenProps(base64: homeScreenController.base64.value)),
+                    );
+                  }),
                 ),
               ],
             ),

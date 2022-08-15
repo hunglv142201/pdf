@@ -1,4 +1,4 @@
-name: pdf
+name: pdf_creator
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -35,6 +35,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   get: ^4.6.5
+  pdf: ^3.8.2
+  webviewx: ^0.2.1
 
 dev_dependencies:
   flutter_test:
