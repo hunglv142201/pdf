@@ -21,7 +21,7 @@ class PdfViewerScreen extends StatelessWidget {
     return WebViewX(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      initialContent: "<iframe width='100%' height='100%' src='data:application/pdf;base64,$base64'></iframe>",
+      initialContent: "<iframe width='100%' height='1500px' src='data:application/pdf;base64,$base64'></iframe>",
       initialSourceType: SourceType.html,
     );
   }

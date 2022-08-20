@@ -43,7 +43,11 @@ class HomeScreenController extends GetxController {
     isLoading.value = true;
 
     if (formKey.currentState!.validate()) {
-      Uint8List pdf = await TestPdfTemplate.build();
+      Uint8List pdf = await TestPdfTemplate.build(
+        titleFormFieldController.text,
+        firstNameFormFieldController.text,
+        lastNameFormFieldController.text,
+      );
       base64.value = base64Encode(pdf);
     }
 
