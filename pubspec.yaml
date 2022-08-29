@@ -37,6 +37,7 @@ dependencies:
   get: ^4.6.5
   pdf: ^3.8.2
   webviewx: ^0.2.1
+  printing: ^5.9.2
 
 dev_dependencies:
   flutter_test:

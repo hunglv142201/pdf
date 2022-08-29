@@ -3,7 +3,8 @@ import 'dart:typed_data';
 
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:pdf_creator/pdf_templates/test.dart';
+
+import '../../pdf_templates/test_2.dart';
 
 class HomeScreenController extends GetxController {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -43,7 +44,7 @@ class HomeScreenController extends GetxController {
     isLoading.value = true;
 
     if (formKey.currentState!.validate()) {
-      Uint8List pdf = await TestPdfTemplate.build(
+      Uint8List pdf = await Test2PdfTemplate.build(
         titleFormFieldController.text,
         firstNameFormFieldController.text,
         lastNameFormFieldController.text,
