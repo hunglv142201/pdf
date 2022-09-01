@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../pdf_templates/test_2.dart';
@@ -53,5 +54,7 @@ class HomeScreenController extends GetxController {
     }
 
     isLoading.value = false;
+
+    Clipboard.setData(ClipboardData(text: 'data:application/pdf;base64,$base64'));
   }
 }
