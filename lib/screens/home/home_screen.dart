@@ -57,39 +57,13 @@ class HomeScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(16),
                   child: CupertinoButton.filled(
                     onPressed: () {
-                      homeScreenController.handleFormSubmit();
+                      homeScreenController.handleFormSubmit(
+                        (value) =>
+                            Navigator.of(context).pushNamed('pdf_viewer', arguments: PdfViewerScreenProps(pdf: value)),
+                      );
                     },
                     child: const Text('Confirm'),
                   ),
-                ),
-                // Padding(
-                //   padding: const EdgeInsets.all(16),
-                //   child: Obx(() {
-                //     if (homeScreenController.base64.value == null) {
-                //       return Container();
-                //     }
-                //     if (homeScreenController.isLoading.value) {
-                //       return const CupertinoActivityIndicator();
-                //     }
-                //     return CupertinoButton.filled(
-                //       child: const Text('View'),
-                //       onPressed: () => Navigator.of(context).pushNamed('pdf_viewer',
-                //           arguments: PdfViewerScreenProps(base64: homeScreenController.base64.value)),
-                //     );
-                //   }),
-                // ),
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Obx(() {
-                    if (homeScreenController.base64.value == null) {
-                      return Container();
-                    }
-                    if (homeScreenController.isLoading.value) {
-                      return const CupertinoActivityIndicator();
-                    }
-                    return const Text(
-                        "The URL has been copied in the clipboard.\nPlease open a new tab and paste the URL to see the PDF");
-                  }),
                 ),
               ],
             ),

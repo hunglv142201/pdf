@@ -1,5 +1,7 @@
-class PdfViewerScreenProps {
-  const PdfViewerScreenProps({this.base64});
+import 'dart:typed_data';
 
-  final String? base64;
+class PdfViewerScreenProps {
+  const PdfViewerScreenProps({this.pdf});
+
+  final Future<Uint8List>? pdf;
 }

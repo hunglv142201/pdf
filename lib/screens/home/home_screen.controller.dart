@@ -1,8 +1,6 @@
-import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../pdf_templates/test_2.dart';
@@ -41,20 +39,19 @@ class HomeScreenController extends GetxController {
     }
   }
 
-  Future handleFormSubmit() async {
+  Future handleFormSubmit(void Function(Future<Uint8List> base64) callback) async {
     isLoading.value = true;
 
     if (formKey.currentState!.validate()) {
-      Uint8List pdf = await Test2PdfTemplate.build(
+      Future<Uint8List> pdf = Test2PdfTemplate.build(
         titleFormFieldController.text,
         firstNameFormFieldController.text,
         lastNameFormFieldController.text,
       );
-      base64.value = base64Encode(pdf);
+
+      callback(pdf);
     }
 
     isLoading.value = false;
-
-    Clipboard.setData(ClipboardData(text: 'data:application/pdf;base64,$base64'));
   }
 }

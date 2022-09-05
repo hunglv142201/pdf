@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 
 import 'screens/home/home_screen.dart';
 import 'screens/home/home_screen.props.dart';
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetCupertinoApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'PDF Creator',
       initialRoute: 'home',
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
         'home': (context) => HomeScreen(props: HomeScreenProps()),
         'pdf_viewer': (context) => PdfViewerScreen(
               props: ModalRoute.of(context)?.settings.arguments as PdfViewerScreenProps? ??
-                  const PdfViewerScreenProps(base64: null),
+                  const PdfViewerScreenProps(pdf: null),
             ),
       },
     );
