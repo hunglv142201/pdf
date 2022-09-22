@@ -11,6 +11,6 @@ class PdfViewerScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PdfPreview(build: (format) => props.pdf ?? Test3PdfTemplate.build());
+    return PdfPreview(build: (format) => props.pdf ?? Test3PdfTemplate().build());
   }
 }

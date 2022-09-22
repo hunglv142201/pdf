@@ -3,10 +3,12 @@ import 'dart:typed_data';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:pdf/widgets.dart';
+import 'package:pdf_creator/pdf_templates/pdf_template.dart';
 import 'package:printing/printing.dart';
 
-class Test3PdfTemplate {
-  static Future<Uint8List> build() async {
+class Test3PdfTemplate extends PDFTemplate {
+  @override
+  Future<Uint8List> build() async {
     final font = await PdfGoogleFonts.mPLUSRounded1cRegular();
     final pdf = pw.Document();
 

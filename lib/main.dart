@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'screens/home/home_screen.dart';
-import 'screens/home/home_screen.props.dart';
 import 'screens/pdf_viewer/pdf_viewer_screen.dart';
 import 'screens/pdf_viewer/pdf_viewer_screen.props.dart';
 
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'PDF Creator',
       initialRoute: 'home',
       routes: {
-        'home': (context) => HomeScreen(props: HomeScreenProps()),
+        'home': (context) => const HomeScreen(),
         'pdf_viewer': (context) => PdfViewerScreen(
               props: ModalRoute.of(context)?.settings.arguments as PdfViewerScreenProps? ??
                   const PdfViewerScreenProps(pdf: null),

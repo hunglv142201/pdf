@@ -2,10 +2,18 @@ import 'dart:typed_data';
 
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
+import 'package:pdf_creator/pdf_templates/pdf_template.dart';
 import 'package:printing/printing.dart';
 
-class Test2PdfTemplate {
-  static Future<Uint8List> build(String? title, String? firstName, String? lastName) async {
+class Test2PdfTemplate extends PDFTemplate {
+  Test2PdfTemplate({this.title, this.firstName, this.lastName});
+
+  final String? title;
+  final String? firstName;
+  final String? lastName;
+
+  @override
+  Future<Uint8List> build() async {
     final DateTime now = DateTime.now();
     final font = await PdfGoogleFonts.mPLUSRounded1cRegular();
     final pdf = pw.Document();
