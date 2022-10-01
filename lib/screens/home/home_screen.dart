@@ -6,6 +6,7 @@ import 'package:pdf_creator/pdf_templates/test_3.dart';
 import 'package:pdf_creator/pdf_templates/test_4.dart';
 import 'package:pdf_creator/pdf_templates/test_10_1_25.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_11127.dart';
+import 'package:pdf_creator/pdf_templates/test_12_1_27.dart';
 import 'package:pdf_creator/screens/pdf_viewer/pdf_viewer_screen.props.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -27,6 +28,8 @@ class HomeScreen extends StatelessWidget {
                   Test10125PdfTemplate(), "To PDF 10_1_25 Template", context),
               _buildLink(
                   PdfTemplate11127(), "To PDF 11_1_27 Template", context),
+              _buildLink(Test12PdfTemplate('2022', '07', '01', '株式会社ＡＮＡＬＯＧ'),
+                  "To PDF 12_1_27 Template", context),
             ],
           ),
         ),
