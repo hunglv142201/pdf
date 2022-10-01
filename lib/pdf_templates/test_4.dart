@@ -19,7 +19,7 @@ class Test4PdfTemplate extends PDFTemplate {
           return pw.Column(
             crossAxisAlignment: pw.CrossAxisAlignment.start,
             children: [
-              _buildText('参考様式第1-4号', font, fontSize: 11),
+              _buildText('参考様式第 1-4 号', font, fontSize: 11),
               pw.Padding(
                 padding: const pw.EdgeInsets.symmetric(vertical: 2),
                 child: pw.Center(

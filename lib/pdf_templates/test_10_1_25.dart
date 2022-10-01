@@ -199,18 +199,27 @@ class Test10125PdfTemplate extends PDFTemplate {
               pw.Center(
                 child: pw.Padding(
                     padding: const pw.EdgeInsets.only(left: 32),
-                    child: _buildText('特定技能所属機関の氏名又は名称      ErrorANALOG', font,
+                    child: _buildText('特定技能所属機関の氏名又は名称      NullANALOG', font,
                         fontSize: 11)),
               ),
               pw.Center(
                 child: pw.Padding(
-                    padding: const pw.EdgeInsets.only(left: 32, top: 40),
+                    padding: const pw.EdgeInsets.only(left: 140, top: 40),
                     child: pw.Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           _buildText('作成責任者      役職・氏名         ', font,
                               fontSize: 11),
-                          _buildUnderLineText('Error Error', font, fontSize: 11)
+                          pw.Padding(
+                            padding: const pw.EdgeInsets.only(left: 26),
+                            child: Container(
+                              margin: const EdgeInsets.all(2.0),
+                              width: 150,
+                              decoration: myUnderLine('#000000', width: 0.5),
+                              child: _buildText(' Null    Null', font,
+                                  fontSize: 11),
+                            ),
+                          )
                         ])),
               ),
             ],
@@ -243,5 +252,15 @@ class Test10125PdfTemplate extends PDFTemplate {
               fontSize: fontSize,
               decoration: pw.TextDecoration.underline));
     }
+  }
+
+  static BoxDecoration myUnderLine(String color, {double width = 1}) {
+    return BoxDecoration(
+        border: pw.Border(
+      bottom: BorderSide(
+        color: PdfColor.fromHex(color),
+        width: width,
+      ),
+    ));
   }
 }

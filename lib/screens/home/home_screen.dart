@@ -5,6 +5,7 @@ import 'package:pdf_creator/pdf_templates/test_2.dart';
 import 'package:pdf_creator/pdf_templates/test_3.dart';
 import 'package:pdf_creator/pdf_templates/test_4.dart';
 import 'package:pdf_creator/pdf_templates/test_10_1_25.dart';
+import 'package:pdf_creator/pdf_templates/pdf_template_11127.dart';
 import 'package:pdf_creator/screens/pdf_viewer/pdf_viewer_screen.props.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -24,6 +25,8 @@ class HomeScreen extends StatelessWidget {
               _buildLink(Test4PdfTemplate(), "To PDF 3_1_4 Template", context),
               _buildLink(
                   Test10125PdfTemplate(), "To PDF 10_1_25 Template", context),
+              _buildLink(
+                  PdfTemplate11127(), "To PDF 11_1_27 Template", context),
             ],
           ),
         ),
