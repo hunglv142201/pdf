@@ -1298,14 +1298,43 @@ class PdfTemplate11127 extends PDFTemplate {
                                                     font,
                                                     fontSize: 8.5)),
                                             pw.Container(
-                                                height: 35,
-                                                padding: const pw
-                                                        .EdgeInsets.symmetric(
-                                                    vertical: 2, horizontal: 2),
-                                                alignment: pw.Alignment.center,
-                                                child: _buildText(
-                                                    '□ 該当あり\n□ 該当なし', font,
-                                                    fontSize: 9)),
+                                              height: 35,
+                                              padding:
+                                                  const pw.EdgeInsets.symmetric(
+                                                      vertical: 4,
+                                                      horizontal: 2),
+                                              alignment: pw.Alignment.center,
+                                              child: pw.Column(
+                                                children: [
+                                                  pw.Row(children: [
+                                                    Checkbox(
+                                                      name: '',
+                                                      value: true,
+                                                      width: 8,
+                                                      height: 8,
+                                                      activeColor:
+                                                          PdfColor.fromHex(
+                                                              '#000000'),
+                                                    ),
+                                                    _buildText(' 該当あり', font,
+                                                        fontSize: 9),
+                                                  ]),
+                                                  pw.Row(children: [
+                                                    Checkbox(
+                                                      name: '',
+                                                      value: false,
+                                                      width: 8,
+                                                      height: 8,
+                                                      activeColor:
+                                                          PdfColor.fromHex(
+                                                              '#000000'),
+                                                    ),
+                                                    _buildText(' 該当なし', font,
+                                                        fontSize: 9),
+                                                  ]),
+                                                ],
+                                              ),
+                                            ),
                                           ]),
                                           pw.TableRow(children: [
                                             pw.Container(
@@ -1328,35 +1357,49 @@ class PdfTemplate11127 extends PDFTemplate {
                                                     font,
                                                     fontSize: 8.5)),
                                             pw.Container(
-                                                height: 35,
-                                                padding: const pw
-                                                        .EdgeInsets.symmetric(
-                                                    vertical: 2, horizontal: 2),
-                                                alignment: pw.Alignment.center,
-                                                child: _buildText(
-                                                    '□ 該当あり\n□ 該当なし', font,
-                                                    fontSize: 9)),
+                                              height: 35,
+                                              padding:
+                                                  const pw.EdgeInsets.symmetric(
+                                                      vertical: 2,
+                                                      horizontal: 2),
+                                              alignment: pw.Alignment.center,
+                                              child: pw.Column(
+                                                children: [
+                                                  pw.Row(children: [
+                                                    Checkbox(
+                                                      name: '',
+                                                      value: true,
+                                                      width: 8,
+                                                      height: 8,
+                                                      activeColor:
+                                                          PdfColor.fromHex(
+                                                              '#000000'),
+                                                    ),
+                                                    _buildText(' 該当あり', font,
+                                                        fontSize: 9),
+                                                  ]),
+                                                  pw.Row(children: [
+                                                    Checkbox(
+                                                      name: '',
+                                                      value: false,
+                                                      width: 8,
+                                                      height: 8,
+                                                      activeColor:
+                                                          PdfColor.fromHex(
+                                                              '#000000'),
+                                                    ),
+                                                    _buildText(' 該当なし', font,
+                                                        fontSize: 9),
+                                                  ]),
+                                                ],
+                                              ),
+                                            ),
                                           ]),
                                         ])),
                               ]),
                             ]),
                       ]))),
               _buildText('  (注意)', font, fontSize: 8),
-              pw.Padding(
-                padding:
-                    const pw.EdgeInsets.only(right: -30, top: -22, left: 8),
-                child: _buildText(
-                    '1    (1) の「自発的離職」とは, 特定技能外国人の自己都合による転職や退職をいい,「非自発的離職」とは, 特定技能所属機関の経営\n上の都合により, 人員整理を行うために希望退職を募集したり又は退職勧奨を行った場合等をいう。',
-                    font,
-                    fontSize: 8),
-              ),
-              pw.Padding(
-                padding: const pw.EdgeInsets.only(right: -30),
-                child: _buildText(
-                    '2    (2)の「外国人労働者」とは, 入管法別表第 1の1, 2 及び5の表 (就労資格に限る) の在留資格をもって在留する者をいう。',
-                    font,
-                    fontSize: 8),
-              ),
             ],
           );
         },
@@ -1369,7 +1412,21 @@ class PdfTemplate11127 extends PDFTemplate {
         return pw
             .Column(crossAxisAlignment: pw.CrossAxisAlignment.start, children: [
           pw.Padding(
-            padding: const pw.EdgeInsets.only(right: -30, left: 8, top: -10),
+            padding: const pw.EdgeInsets.only(right: -30, left: 8, top: -20),
+            child: _buildText(
+                '1    (1) の「自発的離職」とは, 特定技能外国人の自己都合による転職や退職をいい,「非自発的離職」とは, 特定技能所属機関の経営\n\t\t上の都合により, 人員整理を行うために希望退職を募集したり又は退職勧奨を行った場合等をいう。',
+                font,
+                fontSize: 8),
+          ),
+          pw.Padding(
+            padding: const pw.EdgeInsets.only(right: -30, left: 8),
+            child: _buildText(
+                '2    (2)の「外国人労働者」とは, 入管法別表第 1の1, 2 及び5の表 (就労資格に限る) の在留資格をもって在留する者をいう。',
+                font,
+                fontSize: 8),
+          ),
+          pw.Padding(
+            padding: const pw.EdgeInsets.only(right: -30, left: 8),
             child: _buildText(
                 '3    (2) は, 特定技能所属機関が雇用する特定技能外国人の過去 1 年間における行方不明者の発生状況について, 行方不明者が発生して\n\t\tいる場合はその発生人数を, 発生していない場合は0名と記載すること。また, 特定技能所属機関の責めに帰すべき事由により行方不明\n\t\t者が発生している場合は「該当あり」に, 特定技能所属機関の責めによらない理由で行方不明者が発生している場合は「該当なし」にチ\n\t\tェックマークを付すこと。',
                 font,
@@ -1407,7 +1464,13 @@ class PdfTemplate11127 extends PDFTemplate {
                               padding: const pw.EdgeInsets.only(
                                   top: 36, left: 2, right: 2),
                               child: pw.Center(
-                                child: _buildText('□', font, fontSize: 9),
+                                child: Checkbox(
+                                  name: '',
+                                  value: true,
+                                  width: 8,
+                                  height: 8,
+                                  activeColor: PdfColor.fromHex('#000000'),
+                                ),
                               )),
                           pw.Padding(
                             padding: const pw.EdgeInsets.only(
@@ -1472,9 +1535,34 @@ class PdfTemplate11127 extends PDFTemplate {
                                             vertical: 4, horizontal: 2),
                                         child: pw.Container(
                                           alignment: pw.Alignment.centerLeft,
-                                          child: _buildText(
-                                              '□ 法令遵守\n□ 法令違反・行政指導あり', font,
-                                              fontSize: 9),
+                                          child: pw.Column(
+                                            children: [
+                                              pw.Row(children: [
+                                                Checkbox(
+                                                  name: '',
+                                                  value: true,
+                                                  width: 8,
+                                                  height: 8,
+                                                  activeColor: PdfColor.fromHex(
+                                                      '#000000'),
+                                                ),
+                                                _buildText(' 法令遵守', font,
+                                                    fontSize: 9),
+                                              ]),
+                                              pw.Row(children: [
+                                                Checkbox(
+                                                  name: '',
+                                                  value: false,
+                                                  width: 8,
+                                                  height: 8,
+                                                  activeColor: PdfColor.fromHex(
+                                                      '#000000'),
+                                                ),
+                                                _buildText(' 法令違反・行政指導あり', font,
+                                                    fontSize: 9),
+                                              ]),
+                                            ],
+                                          ),
                                         )),
                                   ]),
                                   pw.TableRow(children: [
@@ -1498,9 +1586,34 @@ class PdfTemplate11127 extends PDFTemplate {
                                             vertical: 4, horizontal: 2),
                                         child: pw.Container(
                                           alignment: pw.Alignment.centerLeft,
-                                          child: _buildText(
-                                              '□ 法令遵守\n□ 法令違反・行政指導あり', font,
-                                              fontSize: 9),
+                                          child: pw.Column(
+                                            children: [
+                                              pw.Row(children: [
+                                                Checkbox(
+                                                  name: '',
+                                                  value: true,
+                                                  width: 8,
+                                                  height: 8,
+                                                  activeColor: PdfColor.fromHex(
+                                                      '#000000'),
+                                                ),
+                                                _buildText(' 法令遵守', font,
+                                                    fontSize: 9),
+                                              ]),
+                                              pw.Row(children: [
+                                                Checkbox(
+                                                  name: '',
+                                                  value: false,
+                                                  width: 8,
+                                                  height: 8,
+                                                  activeColor: PdfColor.fromHex(
+                                                      '#000000'),
+                                                ),
+                                                _buildText(' 法令違反・行政指導あり', font,
+                                                    fontSize: 9),
+                                              ]),
+                                            ],
+                                          ),
                                         )),
                                   ]),
                                 ]),
@@ -1511,7 +1624,13 @@ class PdfTemplate11127 extends PDFTemplate {
                               padding: const pw.EdgeInsets.symmetric(
                                   vertical: 22, horizontal: 2),
                               child: pw.Center(
-                                child: _buildText('□', font, fontSize: 9),
+                                child: Checkbox(
+                                  name: '',
+                                  value: true,
+                                  width: 8,
+                                  height: 8,
+                                  activeColor: PdfColor.fromHex('#000000'),
+                                ),
                               )),
                           pw.Padding(
                             padding: const pw.EdgeInsets.symmetric(
@@ -1536,7 +1655,13 @@ class PdfTemplate11127 extends PDFTemplate {
                               padding: const pw.EdgeInsets.symmetric(
                                   vertical: 36, horizontal: 2),
                               child: pw.Center(
-                                child: _buildText('□', font, fontSize: 9),
+                                child: Checkbox(
+                                  name: '',
+                                  value: true,
+                                  width: 8,
+                                  height: 8,
+                                  activeColor: PdfColor.fromHex('#000000'),
+                                ),
                               )),
                           pw.Padding(
                             padding: const pw.EdgeInsets.symmetric(
@@ -1602,9 +1727,38 @@ class PdfTemplate11127 extends PDFTemplate {
                                                     horizontal: 2),
                                                 alignment:
                                                     pw.Alignment.centerLeft,
-                                                child: _buildText(
-                                                    '□是正勧告あり\n□是正勧告なし', font,
-                                                    fontSize: 9),
+                                                child: pw.Column(
+                                                  children: [
+                                                    pw.Row(children: [
+                                                      Checkbox(
+                                                        name: '',
+                                                        value: true,
+                                                        width: 8,
+                                                        height: 8,
+                                                        activeColor:
+                                                            PdfColor.fromHex(
+                                                                '#000000'),
+                                                      ),
+                                                      _buildText(
+                                                          ' 是正勧告あり', font,
+                                                          fontSize: 9),
+                                                    ]),
+                                                    pw.Row(children: [
+                                                      Checkbox(
+                                                        name: '',
+                                                        value: false,
+                                                        width: 8,
+                                                        height: 8,
+                                                        activeColor:
+                                                            PdfColor.fromHex(
+                                                                '#000000'),
+                                                      ),
+                                                      _buildText(
+                                                          ' 是正勧告なし', font,
+                                                          fontSize: 9),
+                                                    ]),
+                                                  ],
+                                                ),
                                               )
                                             ])
                                           ])),
