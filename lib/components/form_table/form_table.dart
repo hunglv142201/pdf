@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pdf_creator/components/form_table/inputs/boolean_input_form_field.dart';
 import 'package:pdf_creator/components/form_table/inputs/date_input_form_field.dart';
+import 'package:pdf_creator/components/form_table/inputs/long_text_input_form_field.dart';
 
 import 'inputs/text_input_form_field.dart';
 
@@ -21,7 +23,7 @@ class FormTable extends StatelessWidget {
     return TableRow(
       children: [
         TableCell(
-          verticalAlignment: TableCellVerticalAlignment.middle,
+          verticalAlignment: TableCellVerticalAlignment.top,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 32),
             child: Text(props.title),
@@ -38,10 +40,13 @@ class FormTable extends StatelessWidget {
   static Widget _buildFormFieldFromInputType(InputType inputType, TextEditingController controller) {
     switch (inputType) {
       case InputType.text:
-      case InputType.longText:
         return TextInputFormField(controller);
+      case InputType.longText:
+        return LongTextInputFormField(controller);
       case InputType.date:
         return DateInputFormField(controller);
+      case InputType.boolean:
+        return BooleanInputFormField(controller);
       default:
         return Container();
     }
@@ -58,4 +63,4 @@ class TableRowProps {
   late TextEditingController controller;
 }
 
-enum InputType { text, longText, date }
+enum InputType { text, longText, date, boolean }
