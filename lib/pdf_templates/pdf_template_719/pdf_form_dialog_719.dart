@@ -16,9 +16,8 @@ class PdfFormDialog719 extends StatelessWidget {
       TableRowProps('input1_5', InputType.longText),
       TableRowProps('input1_6', InputType.boolean),
       TableRowProps('input1_7', InputType.text),
-      TableRowProps('input1_8', InputType.text),
+      TableRowProps('input1_8', InputType.option, params: {'1': '男', '2': '無'}),
       TableRowProps('input1_9', InputType.text),
-      TableRowProps('input1_10', InputType.longText),
     ],
     [
       TableRowProps('input2_1', InputType.boolean),

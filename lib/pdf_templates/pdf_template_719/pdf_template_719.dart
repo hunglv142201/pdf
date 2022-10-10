@@ -10,7 +10,6 @@ class PdfTemplate719 extends PDFTemplate {
 
   final List<List<String>> inputs;
 
-  final pdf = Document();
   late Font font;
 
   @override
@@ -24,7 +23,7 @@ class PdfTemplate719 extends PDFTemplate {
   }
 
   void _buildPage1() {
-    _buildPage(
+    buildPage(
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -99,8 +98,8 @@ class PdfTemplate719 extends PDFTemplate {
                 ),
               ),
               _buildTableRow(_buildText('②居住費として徴収する費用'), _buildText('１か月当たり 約  ' + inputs[0][6] + '  円')),
-              _buildTableRow(_buildText('③提供する宿泊施設の具体的な内容'), _buildText(inputs[0][7] + '・' + inputs[0][8])),
-              _buildTableRow(_buildText('④費用が実費に相当する額その他の適正な額であることの説明'), _buildText(inputs[0][9])),
+              _buildTableRow(_buildText('③提供する宿泊施設の具体的な内容'), _buildOptionInput('有', '無', inputs[0][7])),
+              _buildTableRow(_buildText('④費用が実費に相当する額その他の適正な額であることの説明'), _buildText(inputs[0][8])),
             ],
           ),
           SizedBox(height: 8),
@@ -116,7 +115,7 @@ class PdfTemplate719 extends PDFTemplate {
   }
 
   void _buildPage2() {
-    _buildPage(Column(
+    buildPage(Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // -- Section 4 --
@@ -243,17 +242,6 @@ class PdfTemplate719 extends PDFTemplate {
     ));
   }
 
-  void _buildPage(Widget widget) {
-    pdf.addPage(
-      Page(
-        pageFormat: PdfPageFormat.a4,
-        build: (Context context) {
-          return widget;
-        },
-      ),
-    );
-  }
-
   TableRow _buildTableRow(Widget col1, Widget col2, {bool paddingCol1 = true, bool paddingCol2 = true}) {
     return TableRow(children: [
       Padding(
@@ -264,6 +252,20 @@ class PdfTemplate719 extends PDFTemplate {
         padding: paddingCol2 ? const EdgeInsets.symmetric(horizontal: 6, vertical: 4) : const EdgeInsets.all(0),
         child: col2,
       ),
+    ]);
+  }
+
+  Widget _buildOptionInput(String text1, String text2, String value, {double fontSize = 10}) {
+    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+      Stack(children: [
+        _buildText(text1, fontSize: fontSize),
+        _buildText(value == '1' ? '◯' : '', fontSize: fontSize),
+      ]),
+      _buildText(' ・ ', fontSize: fontSize),
+      Stack(children: [
+        _buildText(text2, fontSize: fontSize),
+        _buildText(value == '2' ? '◯' : '', fontSize: fontSize),
+      ]),
     ]);
   }
 
