@@ -90,23 +90,13 @@ class Test12PdfTemplate extends PDFTemplate {
                 alignment: pw.Alignment.centerRight,
                 child: pw.Padding(
                   padding: const pw.EdgeInsets.symmetric(vertical: 40),
-                  child: _buildText(
-                      (input1_1 ?? '') +
-                          ' 年   ' +
-                          (input1_2 ?? '') +
-                          ' 月   ' +
-                          (input1_3 ?? '') +
-                          ' 日',
-                      font,
-                      fontSize: 13),
+                  child: _buildText((input1_1 ?? '') + ' 年   ' + (input1_2 ?? '') + ' 月   ' + (input1_3 ?? '') + ' 日', font, fontSize: 13),
                 ),
               ),
               pw.Center(
                 child: pw.Padding(
                     padding: const pw.EdgeInsets.only(left: 32),
-                    // child: _buildText('特定技能所属機関名      株式会社ＡＮＡＬＯＧ', font,
-                    child: _buildText('特定技能所属機関名      ' + (input1_4 ?? ''), font,
-                        fontSize: 13)),
+                    child: _buildText('特定技能所属機関名      ' + (input1_4 ?? ''), font, fontSize: 13)),
               ),
             ],
           );
@@ -117,8 +107,7 @@ class Test12PdfTemplate extends PDFTemplate {
     return await pdf.save();
   }
 
-  static pw.Widget _buildText(String text, Font font,
-      {double fontSize = 0, double lineSpacing = 3}) {
+  static pw.Widget _buildText(String text, Font font, {double fontSize = 0, double lineSpacing = 3}) {
     if (fontSize == 0) {
       return pw.Text(text, style: pw.TextStyle(font: font));
     } else {
