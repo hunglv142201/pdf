@@ -6,8 +6,8 @@ import 'package:pdf/widgets.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template.dart';
 import 'package:printing/printing.dart';
 
-class Test10125PdfTemplate extends PDFTemplate {
-  Test10125PdfTemplate(this.inputs);
+class PdfTemplate10125 extends PDFTemplate {
+  PdfTemplate10125(this.inputs);
 
   final List<List<String>> inputs;
 
@@ -209,14 +209,6 @@ class Test10125PdfTemplate extends PDFTemplate {
       return pw.Text(text, style: pw.TextStyle(font: font));
     } else {
       return pw.Text(text, style: pw.TextStyle(font: font, fontSize: fontSize));
-    }
-  }
-
-  static pw.Widget _buildUnderLineText(String text, Font font, {double fontSize = 0}) {
-    if (fontSize == 0) {
-      return pw.Text(text, style: pw.TextStyle(font: font, decoration: pw.TextDecoration.underline));
-    } else {
-      return pw.Text(text, style: pw.TextStyle(font: font, fontSize: fontSize, decoration: pw.TextDecoration.underline));
     }
   }
 

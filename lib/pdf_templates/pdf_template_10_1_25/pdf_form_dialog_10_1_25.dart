@@ -21,17 +21,13 @@ class PdfFormDialog10125 extends StatelessWidget {
       TableRowProps('input1_10', InputType.text),
       TableRowProps('input1_11', InputType.text),
       TableRowProps('input1_12', InputType.text),
-      // TableRowProps('input1_6', InputType.boolean),
-      // TableRowProps('input1_7', InputType.text),
-      // TableRowProps('input1_8', InputType.option, params: {'1': '男', '2': '無'}),
-      // TableRowProps('input1_9', InputType.text),
     ],
   ];
 
   @override
   Widget build(BuildContext context) {
     void _callback(List<List<String>> inputs) {
-      Test10125PdfTemplate template = Test10125PdfTemplate(inputs);
+      PdfTemplate10125 template = PdfTemplate10125(inputs);
 
       Navigator.of(context).pushNamed(
         'pdf_viewer',
@@ -39,6 +35,6 @@ class PdfFormDialog10125 extends StatelessWidget {
       );
     }
 
-    return FormDialog(title: '参考様式第１－９号', tableProps: _tableProps, callback: _callback);
+    return FormDialog(title: '参考様式第１－２５号', tableProps: _tableProps, callback: _callback);
   }
 }
