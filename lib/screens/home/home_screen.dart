@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pdf_creator/components/page_scaffold.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template.dart';
-import 'package:pdf_creator/pdf_templates/pdf_template_11127.dart';
+import 'package:pdf_creator/pdf_templates/pdf_template_11127/pdf_form_dialog_11127.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_314/pdf_form_dialog_314.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_719/pdf_form_dialog_719.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_12_1_27/pdf_form_dialog_12_1_27.dart';
@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
               _buildLinkWithModal(context, PdfFormDialog719(), 'To PDF 7_1_9 Template'),
               _buildLinkWithModal(context, PdfFormDialog12(), 'To PDF 12_1_27 Template'),
               _buildLinkWithModal(context, PdfFormDialog10125(), 'To PDF 10_1_25 Template'),
-              _buildLink(PdfTemplate11127(), "To PDF 11_1_27 Template", context),
+              _buildLinkWithModal(context, PdfFormDialog11127(), 'To PDF 11_1_27 Template'),
             ],
           ),
         ),
