@@ -892,7 +892,10 @@ class PdfTemplate11127 extends PDFTemplate {
   }
 
   void _buildPage2() {
-    // List<String> ins = inputs[1];
+    List<String> ins = inputs[1];
+    String year = ins[27].split('/')[0];
+    String month = ins[27].split('/')[1];
+    String day = ins[27].split('/')[2];
     buildPage(pw.Column(
       crossAxisAlignment: pw.CrossAxisAlignment.start,
       children: [
@@ -943,7 +946,7 @@ class PdfTemplate11127 extends PDFTemplate {
                             child: pw.Center(
                               child: Checkbox(
                                 name: '',
-                                value: true,
+                                value: ins[0] == 'true',
                                 width: 8,
                                 height: 8,
                                 activeColor: PdfColor.fromHex('#000000'),
@@ -990,7 +993,7 @@ class PdfTemplate11127 extends PDFTemplate {
                                       padding: const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 2),
                                       child: pw.Container(
                                         alignment: pw.Alignment.centerRight,
-                                        child: _buildText('7 名', font, fontSize: 9),
+                                        child: _buildText(ins[3] + '  名', font, fontSize: 9),
                                       )),
                                   pw.Padding(
                                       padding: const pw.EdgeInsets.symmetric(vertical: 4, horizontal: 2),
@@ -1001,7 +1004,7 @@ class PdfTemplate11127 extends PDFTemplate {
                                             pw.Row(children: [
                                               Checkbox(
                                                 name: '',
-                                                value: true,
+                                                value: ins[5] == '1',
                                                 width: 8,
                                                 height: 8,
                                                 activeColor: PdfColor.fromHex('#000000'),
@@ -1011,7 +1014,7 @@ class PdfTemplate11127 extends PDFTemplate {
                                             pw.Row(children: [
                                               Checkbox(
                                                 name: '',
-                                                value: false,
+                                                value: ins[5] == '2',
                                                 width: 8,
                                                 height: 8,
                                                 activeColor: PdfColor.fromHex('#000000'),
@@ -1032,7 +1035,7 @@ class PdfTemplate11127 extends PDFTemplate {
                                       padding: const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 2),
                                       child: pw.Container(
                                         alignment: pw.Alignment.centerRight,
-                                        child: _buildText('8 名', font, fontSize: 9),
+                                        child: _buildText(ins[4] + '  名', font, fontSize: 9),
                                       )),
                                   pw.Padding(
                                       padding: const pw.EdgeInsets.symmetric(vertical: 4, horizontal: 2),
@@ -1043,7 +1046,7 @@ class PdfTemplate11127 extends PDFTemplate {
                                             pw.Row(children: [
                                               Checkbox(
                                                 name: '',
-                                                value: true,
+                                                value: ins[6] == '1',
                                                 width: 8,
                                                 height: 8,
                                                 activeColor: PdfColor.fromHex('#000000'),
@@ -1053,7 +1056,7 @@ class PdfTemplate11127 extends PDFTemplate {
                                             pw.Row(children: [
                                               Checkbox(
                                                 name: '',
-                                                value: false,
+                                                value: ins[6] == '2',
                                                 width: 8,
                                                 height: 8,
                                                 activeColor: PdfColor.fromHex('#000000'),
@@ -1073,7 +1076,7 @@ class PdfTemplate11127 extends PDFTemplate {
                             child: pw.Center(
                               child: Checkbox(
                                 name: '',
-                                value: true,
+                                value: ins[1] == 'true',
                                 width: 8,
                                 height: 8,
                                 activeColor: PdfColor.fromHex('#000000'),
@@ -1096,7 +1099,7 @@ class PdfTemplate11127 extends PDFTemplate {
                             child: pw.Center(
                               child: Checkbox(
                                 name: '',
-                                value: true,
+                                value: ins[2] == 'true',
                                 width: 8,
                                 height: 8,
                                 activeColor: PdfColor.fromHex('#000000'),
@@ -1118,8 +1121,7 @@ class PdfTemplate11127 extends PDFTemplate {
                                       child: pw.Center(
                                         child: _buildText(' (注意:該当することを立証する資料を必ず添\n付すること)', font, fontSize: 8),
                                       )),
-                                  pw.Padding(
-                                      padding: const pw.EdgeInsets.symmetric(horizontal: 2), child: _buildText(' User Input!', font, fontSize: 10)),
+                                  pw.Padding(padding: const pw.EdgeInsets.symmetric(horizontal: 2), child: _buildText(ins[7], font, fontSize: 10)),
                                 ])),
                             pw.Expanded(
                                 flex: 48,
@@ -1141,7 +1143,7 @@ class PdfTemplate11127 extends PDFTemplate {
                                           pw.Row(children: [
                                             Checkbox(
                                               name: '',
-                                              value: true,
+                                              value: ins[8] == '1',
                                               width: 8,
                                               height: 8,
                                               activeColor: PdfColor.fromHex('#000000'),
@@ -1151,7 +1153,7 @@ class PdfTemplate11127 extends PDFTemplate {
                                           pw.Row(children: [
                                             Checkbox(
                                               name: '',
-                                              value: false,
+                                              value: ins[8] == '2',
                                               width: 8,
                                               height: 8,
                                               activeColor: PdfColor.fromHex('#000000'),
@@ -1269,16 +1271,16 @@ class PdfTemplate11127 extends PDFTemplate {
                                           height: 42, alignment: pw.Alignment.center, child: _buildText('所属部署\n\t\t\t役職', font, fontSize: 9)),
                                     ]),
                                     pw.TableRow(children: [
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[9], font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[10], font, fontSize: 9)),
                                     ]),
                                     pw.TableRow(children: [
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[11], font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[12], font, fontSize: 9)),
                                     ]),
                                     pw.TableRow(children: [
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[13], font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[14], font, fontSize: 9)),
                                     ]),
                                   ])
                             ])),
@@ -1304,16 +1306,16 @@ class PdfTemplate11127 extends PDFTemplate {
                                           height: 42, alignment: pw.Alignment.center, child: _buildText('所属部署\n\t\t\t役職', font, fontSize: 9)),
                                     ]),
                                     pw.TableRow(children: [
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[15], font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[16], font, fontSize: 9)),
                                     ]),
                                     pw.TableRow(children: [
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[17], font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[18], font, fontSize: 9)),
                                     ]),
                                     pw.TableRow(children: [
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[19], font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[20], font, fontSize: 9)),
                                     ]),
                                   ])
                             ])),
@@ -1339,16 +1341,16 @@ class PdfTemplate11127 extends PDFTemplate {
                                           height: 42, alignment: pw.Alignment.center, child: _buildText('所属部署\n\t\t\t役職', font, fontSize: 9)),
                                     ]),
                                     pw.TableRow(children: [
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[21], font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[22], font, fontSize: 9)),
                                     ]),
                                     pw.TableRow(children: [
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[23], font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[24], font, fontSize: 9)),
                                     ]),
                                     pw.TableRow(children: [
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
-                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText('----', font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[25], font, fontSize: 9)),
+                                      pw.Container(height: 26, alignment: pw.Alignment.center, child: _buildText(ins[26], font, fontSize: 9)),
                                     ]),
                                   ])
                             ])),
@@ -1367,12 +1369,12 @@ class PdfTemplate11127 extends PDFTemplate {
           alignment: pw.Alignment.centerRight,
           child: pw.Padding(
             padding: const pw.EdgeInsets.only(top: 16, bottom: 16, right: -30),
-            child: _buildText('2022 年   01 月   04 日', font, fontSize: 11),
+            child: _buildText(year + ' 年  ' + month + ' 月 ' + day + ' 日', font, fontSize: 11),
           ),
         ),
         pw.Center(
           child: pw.Padding(
-              padding: const pw.EdgeInsets.only(left: 120, top: -10), child: _buildText('特定技能所属機関の氏名又は名称      NullANALOG', font, fontSize: 9.5)),
+              padding: const pw.EdgeInsets.only(left: 120, top: -10), child: _buildText('特定技能所属機関の氏名又は名称      ' + ins[28], font, fontSize: 9.5)),
         ),
         pw.Center(
           child: pw.Padding(
@@ -1384,7 +1386,7 @@ class PdfTemplate11127 extends PDFTemplate {
                   child: Container(
                     margin: const EdgeInsets.all(2.0),
                     width: 150,
-                    child: _buildText('Null    Null', font, fontSize: 9.5),
+                    child: _buildText(ins[29] + '    ' + ins[30], font, fontSize: 9.5),
                   ),
                 )
               ])),

@@ -64,23 +64,46 @@ class PdfFormDialog11127 extends StatelessWidget {
       TableRowProps('input_36', InputType.option, params: {'1': '該当あり', '2': '該当なし'}), // index 36
       TableRowProps('input_37', InputType.option, params: {'1': '該当あり', '2': '該当なし'}), // index 37
     ],
-    // [
-    //   TableRowProps('input2_1', InputType.longText),
-    //   TableRowProps('input2_2', InputType.text),
-    //   TableRowProps('input2_3', InputType.option, params: {'1': '男', '2': '女'}),
-    //   TableRowProps('input2_4', InputType.text),
-    //   TableRowProps('input2_5', InputType.text),
-    //   TableRowProps('input2_6', InputType.text),
-    //   TableRowProps('input2_7', InputType.option, params: {'1': '男', '2': '無'}),
-    //   TableRowProps('input2_8', InputType.text),
-    //   TableRowProps('input2_9', InputType.text),
-    //   TableRowProps('input2_10', InputType.longText),
-    //   TableRowProps('input2_11', InputType.longText),
-    //   TableRowProps('input2_12', InputType.date),
-    //   TableRowProps('input2_13', InputType.text),
-    //   TableRowProps('input2_14', InputType.text),
-    //   TableRowProps('input2_15', InputType.text),
-    // ],
+    [
+      // First table
+      TableRowProps('（１）過去２年間にわたり中長期在留者の受入れを適正に行った実績', InputType.singleOption),
+      TableRowProps('（２）支援責任者及び支援担当者が過去２年間に中長期在留者の生活相談業務に従事した実績を有すること', InputType.singleOption),
+      TableRowProps('（３）（１）及び（２）に掲げるもののほか，これらの者と同程度に支援業務を適正に実施することができること', InputType.singleOption),
+      TableRowProps('input2_3', InputType.text), // index 3
+      TableRowProps('input2_4', InputType.text), // index 4
+      TableRowProps('input2_5', InputType.option, params: {'1': '法令遵守', '2': '法令違反・行政指導あり'}), // index 5
+      TableRowProps('input2_6', InputType.option, params: {'1': '法令遵守', '2': '法令違反・行政指導あり'}), // index 6
+      TableRowProps('input2_7', InputType.longText), // index 7
+      TableRowProps('input2_8', InputType.option, params: {'1': '是正勧告あり', '2': '是正勧告なし'}), // index 8
+
+      // Second table
+      // 支援対象者 (申請人) column
+      TableRowProps('氏名', InputType.text), // index 9
+      TableRowProps('所属部署役職', InputType.longText), // index 10
+      TableRowProps('氏名', InputType.text), // index 11
+      TableRowProps('所属部署役職', InputType.longText), // index 12
+      TableRowProps('氏名', InputType.text), // index 13
+      TableRowProps('所属部署役職', InputType.longText), // index 14
+      // 支援責任者 column
+      TableRowProps('氏名', InputType.text), // index 15
+      TableRowProps('所属部署役職', InputType.longText), // index 16
+      TableRowProps('氏名', InputType.text), // index 17
+      TableRowProps('所属部署役職', InputType.longText), // index 18
+      TableRowProps('氏名', InputType.text), // index 19
+      TableRowProps('所属部署役職', InputType.longText), // index 20
+      // 支援担当者 column
+      TableRowProps('氏名', InputType.text), // index 21
+      TableRowProps('所属部署役職', InputType.longText), // index 22
+      TableRowProps('氏名', InputType.text), // index 23
+      TableRowProps('所属部署役職', InputType.longText), // index 24
+      TableRowProps('氏名', InputType.text), // index 25
+      TableRowProps('所属部署役職', InputType.longText), // index 26
+      // Last section
+      TableRowProps('input2_27', InputType.date), // index 27
+      TableRowProps('input2_28', InputType.text), // index 28
+      TableRowProps('input2_29', InputType.text), // index 29
+      TableRowProps('input2_30', InputType.text), // index 30
+    ],
   ];
 
   @override

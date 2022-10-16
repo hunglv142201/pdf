@@ -3,6 +3,7 @@ import 'package:pdf_creator/components/form_table/inputs/boolean_input_form_fiel
 import 'package:pdf_creator/components/form_table/inputs/date_input_form_field.dart';
 import 'package:pdf_creator/components/form_table/inputs/long_text_input_form_field.dart';
 import 'package:pdf_creator/components/form_table/inputs/option_input_form_field.dart';
+// import 'package:pdf_creator/components/form_table/inputs/single_option_input_form_field.dart';
 
 import 'inputs/text_input_form_field.dart';
 
@@ -50,6 +51,9 @@ class FormTable extends StatelessWidget {
         return BooleanInputFormField(props.controller);
       case InputType.option:
         return OptionInputFormField(props.controller, props.params);
+      case InputType.singleOption:
+        var param = {'1': ''};
+        return OptionInputFormField(props.controller, param);
       default:
         return Container();
     }
@@ -67,4 +71,4 @@ class TableRowProps {
   late TextEditingController controller;
 }
 
-enum InputType { text, longText, date, boolean, option }
+enum InputType { text, longText, date, boolean, option, singleOption }
