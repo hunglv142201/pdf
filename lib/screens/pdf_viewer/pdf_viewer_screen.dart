@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:pdf_creator/pdf_templates/pdf_template_11127.dart';
+import 'package:pdf_creator/pdf_templates/pdf_template_11127/pdf_template_11127.dart';
 import 'package:printing/printing.dart';
 
 import 'pdf_viewer_screen.props.dart';
@@ -11,6 +11,6 @@ class PdfViewerScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PdfPreview(build: (format) => props.pdf ?? PdfTemplate11127().build());
+    return PdfPreview(build: (format) => props.pdf ?? PdfTemplate11127([[]]).build());
   }
 }
