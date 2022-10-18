@@ -14,13 +14,18 @@ class PdfTemplate11127 extends PDFTemplate {
 
     pdf.addPage(
       pw.Page(
-        pageFormat: PdfPageFormat.a4,
+        // pageFormat: PdfPageFormat.a4,
+        pageFormat: const PdfPageFormat(21.0 * cm, 29.7 * cm,
+            marginTop: 2.0 * cm,
+            marginBottom: 0.5 * cm,
+            marginLeft: 2.0 * cm,
+            marginRight: 2.0 * cm),
         build: (pw.Context context) {
           return pw.Column(
             crossAxisAlignment: pw.CrossAxisAlignment.start,
             children: [
               pw.Padding(
-                padding: const pw.EdgeInsets.only(top: -30),
+                padding: const pw.EdgeInsets.only(top: -36),
                 child: _buildText('参考様式第 １－１ １ 号', font, fontSize: 11),
               ),
               pw.Padding(
@@ -1400,6 +1405,20 @@ class PdfTemplate11127 extends PDFTemplate {
                             ]),
                       ]))),
               _buildText('  (注意)', font, fontSize: 8),
+              pw.Padding(
+                padding: const pw.EdgeInsets.only(right: -30, left: 8),
+                child: _buildText(
+                    '1    (1) の「自発的離職」とは, 特定技能外国人の自己都合による転職や退職をいい,「非自発的離職」とは, 特定技能所属機関の経営\n\t\t上の都合により, 人員整理を行うために希望退職を募集したり又は退職勧奨を行った場合等をいう。',
+                    font,
+                    fontSize: 8),
+              ),
+              pw.Padding(
+                padding: const pw.EdgeInsets.only(right: -30, left: 8),
+                child: _buildText(
+                    '2    (2) の「外国人労働者」とは, 入管法別表第 1の1, 2 及び5の表 (就労資格に限る) の在留資格をもって在留する者をいう。',
+                    font,
+                    fontSize: 8),
+              ),
             ],
           );
         },
@@ -1412,21 +1431,7 @@ class PdfTemplate11127 extends PDFTemplate {
         return pw
             .Column(crossAxisAlignment: pw.CrossAxisAlignment.start, children: [
           pw.Padding(
-            padding: const pw.EdgeInsets.only(right: -30, left: 8, top: -20),
-            child: _buildText(
-                '1    (1) の「自発的離職」とは, 特定技能外国人の自己都合による転職や退職をいい,「非自発的離職」とは, 特定技能所属機関の経営\n\t\t上の都合により, 人員整理を行うために希望退職を募集したり又は退職勧奨を行った場合等をいう。',
-                font,
-                fontSize: 8),
-          ),
-          pw.Padding(
-            padding: const pw.EdgeInsets.only(right: -30, left: 8),
-            child: _buildText(
-                '2    (2)の「外国人労働者」とは, 入管法別表第 1の1, 2 及び5の表 (就労資格に限る) の在留資格をもって在留する者をいう。',
-                font,
-                fontSize: 8),
-          ),
-          pw.Padding(
-            padding: const pw.EdgeInsets.only(right: -30, left: 8),
+            padding: const pw.EdgeInsets.only(right: -30, left: 8, top: -10),
             child: _buildText(
                 '3    (2) は, 特定技能所属機関が雇用する特定技能外国人の過去 1 年間における行方不明者の発生状況について, 行方不明者が発生して\n\t\tいる場合はその発生人数を, 発生していない場合は0名と記載すること。また, 特定技能所属機関の責めに帰すべき事由により行方不明\n\t\t者が発生している場合は「該当あり」に, 特定技能所属機関の責めによらない理由で行方不明者が発生している場合は「該当なし」にチ\n\t\tェックマークを付すこと。',
                 font,
@@ -2133,4 +2138,7 @@ class PdfTemplate11127 extends PDFTemplate {
       return pw.Text(text, style: pw.TextStyle(font: font, fontSize: fontSize));
     }
   }
+
+  static const double inch = 72.0;
+  static const double cm = inch / 2.54;
 }
