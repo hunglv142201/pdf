@@ -44,11 +44,15 @@ class PdfTemplate10125 extends PDFTemplate {
         _buildText('参考様式第 1-25 号', font, fontSize: 13),
         pw.Padding(
           padding: const pw.EdgeInsets.symmetric(vertical: 26),
-          child: pw.Center(child: _buildText('登録支援機関との支援委託契約に関する説明書', font, fontSize: 13)),
+          child: pw.Center(
+              child: _buildText('登録支援機関との支援委託契約に関する説明書', font, fontSize: 13)),
         ),
         pw.Padding(
           padding: const pw.EdgeInsets.only(top: 18, bottom: 30),
-          child: pw.Center(child: _buildText('   登録支援機関との 1 号特定技能外国人支援計画の全部の委託契約の概要は下記\nのとおりです。', font, fontSize: 13)),
+          child: pw.Center(
+              child: _buildText(
+                  '   登録支援機関との 1 号特定技能外国人支援計画の全部の委託契約の概要は下記\nのとおりです。', font,
+                  fontSize: 13)),
         ),
         pw.Padding(
           padding: const pw.EdgeInsets.only(bottom: 10),
@@ -65,103 +69,140 @@ class PdfTemplate10125 extends PDFTemplate {
           children: [
             pw.TableRow(children: [
               pw.Padding(
-                padding: const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                padding:
+                    const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                 child: _buildText('1', font, fontSize: 11),
               ),
               pw.Padding(
-                padding: const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                padding:
+                    const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                 child: _buildText('申請人 (支援対象者)', font, fontSize: 11),
               ),
               pw.Align(
                 alignment: pw.Alignment.center,
                 child: pw.Padding(
-                  padding: const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                  padding:
+                      const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                   child: _buildText(ins[0], font, fontSize: 11),
                 ),
               ),
             ]),
             pw.TableRow(children: [
               pw.Padding(
-                padding: const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 16),
+                padding:
+                    const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 16),
                 child: _buildText('2', font, fontSize: 11),
               ),
               pw.Padding(
-                padding: const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 8),
+                padding:
+                    const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 8),
                 child: _buildText('契約の相手方 (登録支援\n機関)', font, fontSize: 11),
               ),
               pw.Align(
                 alignment: pw.Alignment.center,
                 child: pw.Padding(
-                  padding: const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 8),
-                  child: _buildText('  ' + ins[1] + '  ' + '(  ' + ins[2] + '  ) ', font, fontSize: 11),
+                  padding:
+                      const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 8),
+                  child: _buildText(
+                      '  ' + ins[1] + '  ' + '(  ' + ins[2] + '  ) ', font,
+                      fontSize: 11),
                 ),
               ),
             ]),
             pw.TableRow(children: [
               pw.Padding(
-                padding: const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                padding:
+                    const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                 child: _buildText('3', font, fontSize: 11),
               ),
               pw.Padding(
-                padding: const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                padding:
+                    const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                 child: _buildText('契約年月日', font, fontSize: 11),
               ),
               pw.Align(
                 alignment: pw.Alignment.center,
                 child: pw.Padding(
-                  padding: const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-                  child: _buildText(year_1 + ' 年  ' + month_1 + ' 月 ' + day_1 + ' 日', font, fontSize: 11),
+                  padding:
+                      const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                  child: _buildText(
+                      year_1 + ' 年  ' + month_1 + ' 月 ' + day_1 + ' 日', font,
+                      fontSize: 11),
                 ),
               ),
             ]),
             pw.TableRow(children: [
               pw.Padding(
-                padding: const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 16),
+                padding:
+                    const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 16),
                 child: _buildText('4', font, fontSize: 11),
               ),
               pw.Padding(
-                padding: const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 8),
-                child: _buildText('委託する支援業務 ( 1号\n特定技能外国人支援計\n画の全部であること)', font, fontSize: 11),
+                padding:
+                    const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 8),
+                child: _buildText('委託する支援業務 ( 1号\n特定技能外国人支援計\n画の全部であること)', font,
+                    fontSize: 11),
               ),
               pw.Align(
                 alignment: pw.Alignment.center,
                 child: pw.Padding(
-                  padding: const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 8),
-                  child: _buildOptionInput('該当', '非該当', ins[4], font, fontSize: 11),
+                  padding:
+                      const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 8),
+                  child: _buildOptionInput('該当', '非該当', ins[4], font,
+                      fontSize: 11),
                 ),
               ),
             ]),
             pw.TableRow(children: [
               pw.Padding(
-                padding: const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 16),
+                padding:
+                    const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 16),
                 child: _buildText('5', font, fontSize: 11),
               ),
               pw.Padding(
-                padding: const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 8),
+                padding:
+                    const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 8),
                 child: _buildText('委託料(1名当たりの月\n額)', font, fontSize: 11),
               ),
               pw.Align(
                 alignment: pw.Alignment.centerRight,
                 child: pw.Padding(
-                  padding: const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 8),
+                  padding:
+                      const pw.EdgeInsets.symmetric(vertical: 2, horizontal: 8),
                   child: _buildText(ins[5] + ' 円', font, fontSize: 11),
                 ),
               ),
             ]),
             pw.TableRow(children: [
               pw.Padding(
-                padding: const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                padding:
+                    const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                 child: _buildText('6', font, fontSize: 11),
               ),
               pw.Padding(
-                padding: const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                padding:
+                    const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                 child: _buildText('契約期間', font, fontSize: 11),
               ),
               pw.Align(
                 alignment: pw.Alignment.centerRight,
                 child: pw.Padding(
-                  padding: const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-                  child: _buildText(year_2 + ' 年  ' + month_2 + ' 月 ' + day_2 + ' 日から     ' + year_3 + ' 年 ' + month_3 + ' 月 ' + day_3 + ' 日まで', font,
+                  padding:
+                      const pw.EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+                  child: _buildText(
+                      year_2 +
+                          ' 年  ' +
+                          month_2 +
+                          ' 月 ' +
+                          day_2 +
+                          ' 日から     ' +
+                          year_3 +
+                          ' 年 ' +
+                          month_3 +
+                          ' 月 ' +
+                          day_3 +
+                          ' 日まで',
+                      font,
                       fontSize: 10),
                 ),
               ),
@@ -172,33 +213,46 @@ class PdfTemplate10125 extends PDFTemplate {
           padding: const pw.EdgeInsets.only(top: 10, bottom: 10),
           child: _buildText('  (注意)', font, fontSize: 9.5),
         ),
-        _buildText('1   項番 1 に関し, 複数の申請人 (同時申請に限る。) について, 全ての項目の内容が同一の場合には「別紙のと\n\t\t\tおり」として別紙を添付して差し支えない。', font, fontSize: 9.5),
-        _buildText('2   項番 2 に関し, 登録支援機関登録簿に登録された氏名又は名称を記載すること。', font, fontSize: 9.5),
+        _buildText(
+            '1   項番 1 に関し, 複数の申請人 (同時申請に限る。) について, 全ての項目の内容が同一の場合には「別紙のと\n\t\t\tおり」として別紙を添付して差し支えない。',
+            font,
+            fontSize: 9.5),
+        _buildText('2   項番 2 に関し, 登録支援機関登録簿に登録された氏名又は名称を記載すること。', font,
+            fontSize: 9.5),
         pw.Align(
           alignment: pw.Alignment.centerRight,
           child: pw.Padding(
             padding: const pw.EdgeInsets.symmetric(vertical: 40),
-            child: _buildText(year_4 + ' 年  ' + month_4 + ' 月 ' + day_4 + ' 日', font, fontSize: 9.5),
+            child: _buildText(
+                year_4 + ' 年  ' + month_4 + ' 月 ' + day_4 + ' 日', font,
+                fontSize: 9.5),
           ),
         ),
         pw.Center(
-          child: pw.Padding(padding: const pw.EdgeInsets.only(left: 32), child: _buildText('特定技能所属機関の氏名又は名称          ' + ins[9], font, fontSize: 11)),
+          child: pw.Padding(
+              padding: const pw.EdgeInsets.only(left: 32),
+              child: _buildText('特定技能所属機関の氏名又は名称          ' + ins[9], font,
+                  fontSize: 11)),
         ),
         pw.Center(
           child: pw.Padding(
               padding: const pw.EdgeInsets.only(left: 140, top: 40),
-              child: pw.Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                _buildText('作成責任者      役職・氏名         ', font, fontSize: 11),
-                pw.Padding(
-                  padding: const pw.EdgeInsets.only(left: 26),
-                  child: Container(
-                    margin: const EdgeInsets.all(2.0),
-                    width: 150,
-                    decoration: myUnderLine('#000000', width: 0.5),
-                    child: _buildText(ins[10] + '   ' + ins[11], font, fontSize: 11),
-                  ),
-                )
-              ])),
+              child: pw.Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _buildText('作成責任者      役職・氏名         ', font, fontSize: 11),
+                    pw.Padding(
+                      padding: const pw.EdgeInsets.only(left: 26),
+                      child: Container(
+                        margin: const EdgeInsets.all(2.0),
+                        height: 10,
+                        width: 150,
+                        decoration: myUnderLine('#000000', width: 0.5),
+                        child: _buildText(ins[10] + '   ' + ins[11], font,
+                            fontSize: 11),
+                      ),
+                    )
+                  ])),
         ),
       ],
     ));
@@ -222,7 +276,8 @@ class PdfTemplate10125 extends PDFTemplate {
     ));
   }
 
-  Widget _buildOptionInput(String text1, String text2, String value, Font font, {double fontSize = 10}) {
+  Widget _buildOptionInput(String text1, String text2, String value, Font font,
+      {double fontSize = 10}) {
     return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
       Stack(children: [
         _buildText(text1, font, fontSize: fontSize),
