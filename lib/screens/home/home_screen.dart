@@ -6,6 +6,7 @@ import 'package:pdf_creator/pdf_templates/pdf_template_11127/pdf_form_dialog_111
 import 'package:pdf_creator/pdf_templates/pdf_template_2284/pdf_form_dialog_2284.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_314/pdf_form_dialog_314.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_415/pdf_form_dialog_415.dart';
+import 'package:pdf_creator/pdf_templates/pdf_template_6116/pdf_form_dialog_6116.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_719/pdf_form_dialog_719.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_2130/pdf_form_dialog_2130.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_12_1_27/pdf_form_dialog_12_1_27.dart';
@@ -36,6 +37,8 @@ class HomeScreen extends StatelessWidget {
                   context, PdfFormDialog314(), 'To PDF 3_1_4 Template'),
               _buildLinkWithModal(
                   context, PdfFormDialog415(), 'To PDF 4_1_5 Template'),
+              _buildLinkWithModal(
+                  context, PdfFormDialog6116(), 'To PDF 6_1_16 Template'),
               _buildLinkWithModal(
                   context, PdfFormDialog719(), 'To PDF 7_1_9 Template'),
               _buildLinkWithModal(
