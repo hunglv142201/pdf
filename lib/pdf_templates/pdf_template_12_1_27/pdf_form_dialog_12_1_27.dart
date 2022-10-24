@@ -17,9 +17,9 @@ class PdfFormDialog12 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void _callback(List<List<String>> inputs) {
-      String year = inputs[0][0].split('/')[0];
-      String month = inputs[0][0].split('/')[1];
-      String day = inputs[0][0].split('/')[2];
+      String year = inputs[0][0] == '' ? '' : inputs[0][0].split('/')[0];
+      String month = inputs[0][0] == '' ? '' : inputs[0][0].split('/')[1];
+      String day = inputs[0][0] == '' ? '' : inputs[0][0].split('/')[2];
       Test12PdfTemplate template = Test12PdfTemplate(year, month, day, inputs[0][1]);
 
       Navigator.of(context).pushNamed(

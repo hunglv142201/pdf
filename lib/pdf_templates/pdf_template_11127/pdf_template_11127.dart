@@ -893,9 +893,9 @@ class PdfTemplate11127 extends PDFTemplate {
 
   void _buildPage2() {
     List<String> ins = inputs[1];
-    String year = ins[27].split('/')[0];
-    String month = ins[27].split('/')[1];
-    String day = ins[27].split('/')[2];
+    String year = ins[27] == '' ? '' : ins[27].split('/')[0];
+    String month = ins[27] == '' ? '' : ins[27].split('/')[1];
+    String day = ins[27] == '' ? '' : ins[27].split('/')[2];
     buildPage(pw.Column(
       crossAxisAlignment: pw.CrossAxisAlignment.start,
       children: [

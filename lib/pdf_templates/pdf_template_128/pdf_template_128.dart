@@ -22,17 +22,17 @@ class PdfTemplate128 extends PDFTemplate {
 
   void _buildPage1() {
     List<String> ins = inputs[0];
-    String year_1 = ins[0].split('/')[0];
-    String month_1 = ins[0].split('/')[1];
-    String day_1 = ins[0].split('/')[2];
+    String year_1 = ins[0] == '' ? '': ins[0].split('/')[0];
+    String month_1 = ins[0] == '' ? '': ins[0].split('/')[1];
+    String day_1 = ins[0] == '' ? '': ins[0].split('/')[2];
 
-    String year_2 = ins[1].split('/')[0];
-    String month_2 = ins[1].split('/')[1];
-    String day_2 = ins[1].split('/')[2];
+    String year_2 = ins[1] == '' ? '': ins[1].split('/')[0];
+    String month_2 = ins[1] == '' ? '': ins[1].split('/')[1];
+    String day_2 = ins[1] == '' ? '': ins[1].split('/')[2];
 
-    String year_3 = ins[2].split('/')[0];
-    String month_3 = ins[2].split('/')[1];
-    String day_3 = ins[2].split('/')[2];
+    String year_3 = ins[2] == '' ? '': ins[2].split('/')[0];
+    String month_3 = ins[2] == '' ? '': ins[2].split('/')[1];
+    String day_3 = ins[2] == '' ? '': ins[2].split('/')[2];
 
     buildPage(
       pw.Column(
