@@ -5,6 +5,7 @@ import 'package:pdf_creator/pdf_templates/pdf_template.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_11127/pdf_form_dialog_11127.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_2284/pdf_form_dialog_2284.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_314/pdf_form_dialog_314.dart';
+import 'package:pdf_creator/pdf_templates/pdf_template_516/pdf_form_dialog_516.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_415/pdf_form_dialog_415.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_6116/pdf_form_dialog_6116.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_719/pdf_form_dialog_719.dart';
@@ -37,13 +38,7 @@ class HomeScreen extends StatelessWidget {
               _buildLinkWithModal(
                   context, PdfFormDialog314(), 'To PDF 3_1_4 Template'),
               _buildLinkWithModal(
-                  context, PdfFormDialog415(), 'To PDF 4_1_5 Template'),
-              _buildLinkWithModal(
-                  context, PdfFormDialog6116(), 'To PDF 6_1_16 Template'),
-              _buildLinkWithModal(
                   context, PdfFormDialog719(), 'To PDF 7_1_9 Template'),
-              _buildLinkWithModal(
-                  context, PdfFormDialog813(), 'To PDF 8_1_3 Template'),
               _buildLinkWithModal(
                   context, PdfFormDialog12(), 'To PDF 12_1_27 Template'),
               _buildLinkWithModal(
@@ -52,6 +47,12 @@ class HomeScreen extends StatelessWidget {
                   context, PdfFormDialog11127(), 'To PDF 11_1_27 Template'),
               _buildLinkWithModal(
                   context, PdfFormDialog2284(), 'To PDF 2_2_84 Template'),
+              _buildLinkWithModal(
+                  context, PdfFormDialog516(), 'To PDF 5_1_6 Template'),
+              _buildLinkWithModal(
+                  context, PdfFormDialog415(), 'To PDF 4_1_5 Template'),
+              _buildLinkWithModal(
+                  context, PdfFormDialog6116(), 'To PDF 6_1_16 Template'),
             ],
           ),
         ),

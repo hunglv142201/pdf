@@ -22,21 +22,21 @@ class PdfTemplate10125 extends PDFTemplate {
 
   void _buildPage1() {
     List<String> ins = inputs[0];
-    String year_1 = ins[3].split('/')[0];
-    String month_1 = ins[3].split('/')[1];
-    String day_1 = ins[3].split('/')[2];
+    String year_1 = ins[3] == '' ? '' : ins[3].split('/')[0];
+    String month_1 = ins[3] == '' ? '' : ins[3].split('/')[1];
+    String day_1 = ins[3] == '' ? '' : ins[3].split('/')[2];
 
-    String year_2 = ins[6].split('/')[0];
-    String month_2 = ins[6].split('/')[1];
-    String day_2 = ins[6].split('/')[2];
+    String year_2 = ins[6] == '' ? '' : ins[6].split('/')[0];
+    String month_2 = ins[6] == '' ? '' : ins[6].split('/')[1];
+    String day_2 = ins[6] == '' ? '' : ins[6].split('/')[2];
 
-    String year_3 = ins[7].split('/')[0];
-    String month_3 = ins[7].split('/')[1];
-    String day_3 = ins[7].split('/')[2];
+    String year_3 = ins[7] == '' ? '' : ins[7].split('/')[0];
+    String month_3 = ins[7] == '' ? '' : ins[7].split('/')[1];
+    String day_3 = ins[7] == '' ? '' : ins[7].split('/')[2];
 
-    String year_4 = ins[8].split('/')[0];
-    String month_4 = ins[8].split('/')[1];
-    String day_4 = ins[8].split('/')[2];
+    String year_4 = ins[8] == '' ? '' : ins[8].split('/')[0];
+    String month_4 = ins[8] == '' ? '' : ins[8].split('/')[1];
+    String day_4 = ins[8] == '' ? '' : ins[8].split('/')[2];
 
     buildPage(pw.Column(
       crossAxisAlignment: pw.CrossAxisAlignment.start,
