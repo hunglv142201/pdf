@@ -14,6 +14,7 @@ class _OptionInputFormFieldState extends State<OptionInputFormField> {
   _Value _value = _Value.yes;
   _Values _value3 = _Values.option1;
   _Values _value6 = _Values.option7;
+  _Values _value7 = _Values.option8;
   bool rememberMe = false;
 
   @override
@@ -186,6 +187,105 @@ class _OptionInputFormFieldState extends State<OptionInputFormField> {
           ],
         ),
       );
+    } else if (widget.params!.length == 7) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 32),
+        child: Column(
+          children: [
+            ListTile(
+              title: Text(widget.params?['1']),
+              leading: Radio<_Values>(
+                value: _Values.option1,
+                groupValue: _value7,
+                onChanged: (_Values? value) {
+                  setState(() {
+                    _value7 = value ?? _Values.option1;
+                    controller.text = '1';
+                  });
+                },
+              ),
+            ),
+            ListTile(
+              title: Text(widget.params?['2']),
+              leading: Radio<_Values>(
+                value: _Values.option2,
+                groupValue: _value7,
+                onChanged: (_Values? value) {
+                  setState(() {
+                    _value7 = value ?? _Values.option2;
+                    controller.text = '2';
+                  });
+                },
+              ),
+            ),
+            ListTile(
+              title: Text(widget.params?['3']),
+              leading: Radio<_Values>(
+                value: _Values.option3,
+                groupValue: _value7,
+                onChanged: (_Values? value) {
+                  setState(() {
+                    _value7 = value ?? _Values.option3;
+                    controller.text = '3';
+                  });
+                },
+              ),
+            ),
+            ListTile(
+              title: Text(widget.params?['4']),
+              leading: Radio<_Values>(
+                value: _Values.option4,
+                groupValue: _value7,
+                onChanged: (_Values? value) {
+                  setState(() {
+                    _value7 = value ?? _Values.option4;
+                    controller.text = '4';
+                  });
+                },
+              ),
+            ),
+            ListTile(
+              title: Text(widget.params?['5']),
+              leading: Radio<_Values>(
+                value: _Values.option5,
+                groupValue: _value7,
+                onChanged: (_Values? value) {
+                  setState(() {
+                    _value7 = value ?? _Values.option5;
+                    controller.text = '5';
+                  });
+                },
+              ),
+            ),
+            ListTile(
+              title: Text(widget.params?['6']),
+              leading: Radio<_Values>(
+                value: _Values.option6,
+                groupValue: _value7,
+                onChanged: (_Values? value) {
+                  setState(() {
+                    _value7 = value ?? _Values.option6;
+                    controller.text = '6';
+                  });
+                },
+              ),
+            ),
+            ListTile(
+              title: Text(widget.params?['7']),
+              leading: Radio<_Values>(
+                value: _Values.option7,
+                groupValue: _value7,
+                onChanged: (_Values? value) {
+                  setState(() {
+                    _value7 = value ?? _Values.option7;
+                    controller.text = '7';
+                  });
+                },
+              ),
+            ),
+          ],
+        ),
+      );
     } else {
       return Padding(
         padding: const EdgeInsets.fromLTRB(0, 0, 380, 0),
@@ -212,4 +312,4 @@ class _OptionInputFormFieldState extends State<OptionInputFormField> {
 }
 
 enum _Value { yes, no }
-enum _Values { option1, option2, option3, option4, option5, option6, option7 }
+enum _Values { option1, option2, option3, option4, option5, option6, option7, option8 }

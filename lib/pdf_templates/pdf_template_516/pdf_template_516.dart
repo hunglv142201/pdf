@@ -7,8 +7,6 @@ import 'package:printing/printing.dart';
 import 'package:pdf/pdf.dart';
 
 class PdfTemplate516 extends PDFTemplate {
-  // PdfTemplate516();
-  // PdfTemplate516({this.inputs = const [[]]});
   PdfTemplate516(this.inputs);
 
   final List<List<String>> inputs;
@@ -447,7 +445,9 @@ class PdfTemplate516 extends PDFTemplate {
                         temHour +
                         ' 時' +
                         temMin +
-                        ' 分） （１日の所定労働時間数 ' +
+                        ' 分） 適用日 ' +
+                        ins[21] +
+                        ' １日の所定労働時間数 ' +
                         temHour +
                         ' 時間' +
                         temMin +
@@ -466,7 +466,9 @@ class PdfTemplate516 extends PDFTemplate {
                         temHour +
                         ' 時' +
                         temMin +
-                        ' 分） （１日の所定労働時間数 ' +
+                        ' 分） 適用日 ' +
+                        ins[22] +
+                        ' １日の所定労働時間数 ' +
                         temHour +
                         ' 時間' +
                         temMin +
@@ -485,7 +487,9 @@ class PdfTemplate516 extends PDFTemplate {
                         temHour +
                         ' 時' +
                         temMin +
-                        ' 分） （１日の所定労働時間数 ' +
+                        ' 分） 適用日 ' +
+                        ins[23] +
+                        ' １日の所定労働時間数 ' +
                         temHour +
                         ' 時間' +
                         temMin +
@@ -494,40 +498,29 @@ class PdfTemplate516 extends PDFTemplate {
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                child: _buildText('２．休憩時間 （ 分）', fontSize: 9),
+                child: _buildText('２．休憩時間 （' + ins[24] + ' 分）', fontSize: 9),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                 child: _buildText(
-                    '３．所定労働時間数 ①週' +
-                        insTem[6] +
-                        '（' +
-                        temHour +
+                    '３．所定労働時間数 ①週（' +
+                        ins[25] +
                         ' 時間' +
-                        temMin +
+                        ins[26] +
                         ' 分） ②月（ ' +
-                        temHour +
+                        ins[27] +
                         ' 時間 ' +
-                        temMin +
-                        '分） ③年（ ' +
-                        temHour +
+                        ins[28] +
+                        ' 分） ③年（ ' +
+                        ins[29] +
                         ' 時間 ' +
-                        temMin +
-                        '分）',
+                        ins[30] +
+                        ' 分）',
                     fontSize: 9),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                child: _buildText(
-                    '４．所定労働日数     ①週' +
-                        insTem[6] +
-                        '（ ' +
-                        insTem[6] +
-                        '日） ②月（ ' +
-                        insTem[6] +
-                        '日） ③年（ ' +
-                        insTem[6] +
-                        '日）',
+                child: _buildText('４．所定労働日数     ①週（ ' + ins[31] + ' 日） ②月（ ' + ins[32] + ' 日） ③年（ ' + ins[33] + ' 日）',
                     fontSize: 9),
               ),
               Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -536,8 +529,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 20),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[34] == '1' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
@@ -549,8 +541,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 40),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[34] == '2' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
@@ -575,9 +566,45 @@ class PdfTemplate516 extends PDFTemplate {
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                child: _buildText(
-                    '１．定例日：毎週 曜日，日本の国民の祝日，その他（' + insTem[5] + '）       ' + '（年間合計休日日数' + insTem[6] + ' 日）',
-                    fontSize: 9),
+                child: Row(children: [
+                  _buildText('１．定例日：', fontSize: 9),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 1, left: 10),
+                    child: Checkbox(
+                      name: '',
+                      value: ins[35] == '1' ? true : false,
+                      width: 8,
+                      height: 8,
+                      decoration: _buildBoxAllSide(),
+                      activeColor: PdfColor.fromHex('#000000'),
+                    ),
+                  ),
+                  _buildText(' 毎週 ' + ins[36] + ' 曜日 ', fontSize: 9),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 1, left: 10),
+                    child: Checkbox(
+                      name: '',
+                      value: ins[35] == '2' ? true : false,
+                      width: 8,
+                      height: 8,
+                      decoration: _buildBoxAllSide(),
+                      activeColor: PdfColor.fromHex('#000000'),
+                    ),
+                  ),
+                  _buildText('  日本の国民の祝日 ', fontSize: 9),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 1, left: 10),
+                    child: Checkbox(
+                      name: '',
+                      value: ins[35] == '3' ? true : false,
+                      width: 8,
+                      height: 8,
+                      decoration: _buildBoxAllSide(),
+                      activeColor: PdfColor.fromHex('#000000'),
+                    ),
+                  ),
+                  _buildText('  その他（ ' + ins[37] + ' )   （年間合計休日日数 ' + ins[38] + ' 日）', fontSize: 9),
+                ]),
               ),
             ],
           ),
@@ -587,30 +614,7 @@ class PdfTemplate516 extends PDFTemplate {
   }
 
   void _buildPage2() {
-    List<String> insTem = [
-      '2022/10/22',
-      'inputX',
-      '2022/10/23',
-      '2022/10/24',
-      '2022/10/25',
-      '                                          ',
-      '         ',
-    ];
-    String year1 = insTem[0] == '' ? '' : insTem[0].split('/')[0];
-    String month1 = insTem[0] == '' ? '' : insTem[0].split('/')[1];
-    String day1 = insTem[0] == '' ? '' : insTem[0].split('/')[2];
-
-    String year2 = insTem[2] == '' ? '' : insTem[2].split('/')[0];
-    String month2 = insTem[2] == '' ? '' : insTem[2].split('/')[1];
-    String day2 = insTem[2] == '' ? '' : insTem[2].split('/')[2];
-
-    String year3 = insTem[3] == '' ? '' : insTem[3].split('/')[0];
-    String month3 = insTem[3] == '' ? '' : insTem[3].split('/')[1];
-    String day3 = insTem[3] == '' ? '' : insTem[3].split('/')[2];
-
-    String year4 = insTem[4] == '' ? '' : insTem[4].split('/')[0];
-    String month4 = insTem[4] == '' ? '' : insTem[4].split('/')[1];
-    String day4 = insTem[4] == '' ? '' : insTem[4].split('/')[2];
+    List<String> ins = inputs[1];
 
     buildPage(Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -625,11 +629,35 @@ class PdfTemplate516 extends PDFTemplate {
             children: [
               // ROW 6 Ⅴ．休日
               Padding(
-                padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-                child: _buildText(
-                    '２．非定例日：週・月当たり' + insTem[6] + ' 日，その他（' + insTem[6] + '）       ' + '（年間合計休日日数' + insTem[6] + ' 日）',
-                    fontSize: 9),
-              ),
+                  padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: Row(children: [
+                    _buildText('２．非定例日：', fontSize: 9),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 1, left: 10),
+                      child: Checkbox(
+                        name: '',
+                        value: ins[0] == '1' ? true : false,
+                        width: 8,
+                        height: 8,
+                        decoration: _buildBoxAllSide(),
+                        activeColor: PdfColor.fromHex('#000000'),
+                      ),
+                    ),
+                    _buildText(' 週・月当たり ' + ins[1] + ' 曜日 ', fontSize: 9),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 1, left: 10),
+                      child: Checkbox(
+                        name: '',
+                        value: ins[0] == '2' ? true : false,
+                        width: 8,
+                        height: 8,
+                        decoration: _buildBoxAllSide(),
+                        activeColor: PdfColor.fromHex('#000000'),
+                      ),
+                    ),
+                    _buildText('  その他（ ' + ins[2] + ' ) ', fontSize: 9),
+                  ])),
+
               Container(
                   alignment: Alignment.centerRight,
                   child: _buildText('○詳細は，就業規則 第     条～第     条，第     条～第     条', fontSize: 9)),
@@ -649,7 +677,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.fromLTRB(10, 0, 20, 0),
                   child: _buildText('１．年次有給休暇', fontSize: 9),
                 ),
-                _buildText('６か月継続勤務した場合→' + insTem[6] + ' 日', fontSize: 9),
+                _buildText('６か月継続勤務した場合→  ' + ins[3] + ' 日', fontSize: 9),
               ]),
               Row(children: [
                 Container(
@@ -662,8 +690,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 20),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[4] == '1' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
@@ -675,15 +702,14 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 40),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[4] == '2' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
                     activeColor: PdfColor.fromHex('#000000'),
                   ),
                 ),
-                _buildText(' 無） →' + insTem[6] + ' か月経過で' + insTem[6] + ' 日', fontSize: 9),
+                _buildText(' 無） → ' + ins[5] + ' か月経過で ' + ins[6] + ' 日', fontSize: 9),
               ]),
               Row(children: [
                 Container(
@@ -691,7 +717,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.fromLTRB(10, 0, 20, 0),
                   child: _buildText('２．その他の休暇', fontSize: 9),
                 ),
-                _buildText('有給（' + insTem[6] + '） 無給（' + insTem[6] + '）', fontSize: 9),
+                _buildText('有給（ ' + ins[7] + ' ） 無給（ ' + ins[8] + ' ）', fontSize: 9),
               ]),
               Row(children: [
                 Container(
@@ -731,41 +757,38 @@ class PdfTemplate516 extends PDFTemplate {
                               padding: const EdgeInsets.only(top: 1, left: 30),
                               child: Checkbox(
                                 name: '',
-                                // value: ins2[3] == '1' ? true : false,
-                                value: false,
+                                value: ins[9] == '1' ? true : false,
                                 width: 8,
                                 height: 8,
                                 decoration: _buildBoxAllSide(),
                                 activeColor: PdfColor.fromHex('#000000'),
                               ),
                             ),
-                            _buildText(' 月給（' + insTem[6] + ' 円） ', fontSize: 9),
+                            _buildText(' 月給（' + ins[10] + ' 円） ', fontSize: 9),
                             Padding(
                               padding: const EdgeInsets.only(top: 1, left: 30),
                               child: Checkbox(
                                 name: '',
-                                // value: ins2[3] == '1' ? true : false,
-                                value: false,
+                                value: ins[9] == '2' ? true : false,
                                 width: 8,
                                 height: 8,
                                 decoration: _buildBoxAllSide(),
                                 activeColor: PdfColor.fromHex('#000000'),
                               ),
                             ),
-                            _buildText(' 月給（' + insTem[6] + ' 円） ', fontSize: 9),
+                            _buildText(' 月給（' + ins[11] + ' 円） ', fontSize: 9),
                             Padding(
                               padding: const EdgeInsets.only(top: 1, left: 30),
                               child: Checkbox(
                                 name: '',
-                                // value: ins2[3] == '1' ? true : false,
-                                value: false,
+                                value: ins[9] == '3' ? true : false,
                                 width: 8,
                                 height: 8,
                                 decoration: _buildBoxAllSide(),
                                 activeColor: PdfColor.fromHex('#000000'),
                               ),
                             ),
-                            _buildText(' 時間給（' + insTem[6] + ' 円） ', fontSize: 9),
+                            _buildText(' 時間給（' + ins[12] + ' 円） ', fontSize: 9),
                           ]),
                           Padding(
                               padding: const EdgeInsets.only(left: 10), child: _buildText('※詳細は別紙のとおり', fontSize: 9)),
@@ -774,7 +797,7 @@ class PdfTemplate516 extends PDFTemplate {
                               child: _buildText('２．諸手当（時間外労働の割増賃金は除く）', fontSize: 9)),
                           Padding(
                               padding: const EdgeInsets.only(left: 25),
-                              child: _buildText('（' + insTem[6] + ' 手当，' + insTem[6] + ' 手当，' + insTem[6] + ' 手当）',
+                              child: _buildText('（ ' + ins[13] + ' 手当，' + ins[14] + ' 手当，' + ins[15] + ' 手当）',
                                   fontSize: 9)),
                           Padding(
                               padding: const EdgeInsets.only(left: 10), child: _buildText('※詳細は別紙のとおり', fontSize: 9)),
@@ -790,7 +813,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                   child: _buildText('(1) 所定時間外', fontSize: 9),
                 ),
-                _buildText('法定超月60時間以内 （' + insTem[6] + '）％', fontSize: 9),
+                _buildText('法定超月60時間以内 （' + ins[16] + '）％', fontSize: 9),
               ]),
               Row(children: [
                 Container(
@@ -798,7 +821,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.fromLTRB(10, 0, 20, 0),
                   child: _buildText('', fontSize: 9),
                 ),
-                _buildText('法定超月60時間超 （' + insTem[6] + '）％', fontSize: 9),
+                _buildText('法定超月60時間超 （' + ins[17] + '）％', fontSize: 9),
               ]),
               Row(children: [
                 Container(
@@ -806,7 +829,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.fromLTRB(10, 0, 20, 0),
                   child: _buildText('', fontSize: 9),
                 ),
-                _buildText('所定超 （' + insTem[6] + '）％', fontSize: 9),
+                _buildText('所定超 （' + ins[18] + '）％', fontSize: 9),
               ]),
               Row(children: [
                 Container(
@@ -814,7 +837,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                   child: _buildText('(2) 休日 ', fontSize: 9),
                 ),
-                _buildText('法定休日 （' + insTem[6] + ' ）％， 法定外休日 （' + insTem[6] + ' ）％', fontSize: 9),
+                _buildText('法定休日 （ ' + ins[19] + ' ）％， 法定外休日 （ ' + ins[20] + ' ）％', fontSize: 9),
               ]),
               Row(children: [
                 Container(
@@ -822,7 +845,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                   child: _buildText('(3) 深夜', fontSize: 9),
                 ),
-                _buildText('（' + insTem[6] + ' ）％', fontSize: 9),
+                _buildText('（ ' + ins[21] + ' ）％', fontSize: 9),
               ]),
               Row(children: [
                 Container(
@@ -834,28 +857,26 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 20),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[22] == '1' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
                     activeColor: PdfColor.fromHex('#000000'),
                   ),
                 ),
-                _buildText(' 毎月' + insTem[6] + ' 日,', fontSize: 9),
+                _buildText(' 毎月 ' + ins[23] + ' 日,', fontSize: 9),
                 Padding(
                   padding: const EdgeInsets.only(top: 1, left: 40),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[22] == '2' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
                     activeColor: PdfColor.fromHex('#000000'),
                   ),
                 ),
-                _buildText(' 毎月' + insTem[6] + ' 日', fontSize: 9),
+                _buildText(' 毎月 ' + ins[24] + ' 日', fontSize: 9),
               ]),
               Row(children: [
                 Container(
@@ -867,28 +888,26 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 20),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[25] == '1' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
                     activeColor: PdfColor.fromHex('#000000'),
                   ),
                 ),
-                _buildText(' 毎月' + insTem[6] + ' 日,', fontSize: 9),
+                _buildText(' 毎月 ' + ins[26] + ' 日,', fontSize: 9),
                 Padding(
                   padding: const EdgeInsets.only(top: 1, left: 40),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[25] == '2' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
                     activeColor: PdfColor.fromHex('#000000'),
                   ),
                 ),
-                _buildText(' 毎月' + insTem[6] + ' 日', fontSize: 9),
+                _buildText(' 毎月 ' + ins[27] + ' 日', fontSize: 9),
               ]),
               Row(children: [
                 Container(
@@ -900,8 +919,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 20),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[28] == '1' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
@@ -913,8 +931,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 40),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[28] == '2' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
@@ -933,8 +950,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 20),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[29] == '1' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
@@ -946,8 +962,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 40),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[29] == '2' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
@@ -967,21 +982,19 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 20),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[30] == '1' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
                     activeColor: PdfColor.fromHex('#000000'),
                   ),
                 ),
-                _buildText(' 有（時期，金額等 ' + insTem[5] + ' ）， ', fontSize: 9),
+                _buildText(' 有（時期，金額等 ' + ins[31] + ' ）， ', fontSize: 9),
                 Padding(
                   padding: const EdgeInsets.only(top: 1, left: 10),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[30] == '2' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
@@ -1000,21 +1013,19 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 20),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[32] == '1' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
                     activeColor: PdfColor.fromHex('#000000'),
                   ),
                 ),
-                _buildText(' 有（時期，金額等 ' + insTem[5] + ' ）， ', fontSize: 9),
+                _buildText(' 有（時期，金額等 ' + ins[33] + ' ）， ', fontSize: 9),
                 Padding(
                   padding: const EdgeInsets.only(top: 1, left: 10),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[32] == '2' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
@@ -1033,21 +1044,19 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 20),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[34] == '1' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
                     activeColor: PdfColor.fromHex('#000000'),
                   ),
                 ),
-                _buildText(' 有（時期，金額等 ' + insTem[5] + ' ）， ', fontSize: 9),
+                _buildText(' 有（時期，金額等 ' + ins[35] + ' ）， ', fontSize: 9),
                 Padding(
                   padding: const EdgeInsets.only(top: 1, left: 10),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[34] == '2' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
@@ -1066,15 +1075,14 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 20),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[36] == '1' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
                     activeColor: PdfColor.fromHex('#000000'),
                   ),
                 ),
-                _buildText(' 有（率' + insTem[5] + ' ）， ', fontSize: 9),
+                _buildText(' 有（率 ' + ins[37] + ' ）， ', fontSize: 9),
               ]),
 
               // ROW 9 Ⅷ．退職に関する事項
@@ -1089,7 +1097,7 @@ class PdfTemplate516 extends PDFTemplate {
               ),
               Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: _buildText('１．自己都合退職の手続（退職する' + insTem[6] + ' 日前に社長・工場長等に届けること）', fontSize: 9)),
+                  child: _buildText('１．自己都合退職の手続（退職する ' + ins[38] + ' 日前に社長・工場長等に届けること）', fontSize: 9)),
               Padding(padding: const EdgeInsets.only(left: 10), child: _buildText('２．解雇の事由及び手続', fontSize: 9)),
               Padding(
                   padding: const EdgeInsets.only(left: 20),
@@ -1119,8 +1127,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 5),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[39] == '1' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
@@ -1132,8 +1139,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 5),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[39] == '2' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
@@ -1145,8 +1151,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 5),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[39] == '3' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
@@ -1158,8 +1163,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 5),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[39] == '4' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
@@ -1173,8 +1177,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 25),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[39] == '5' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
@@ -1186,8 +1189,7 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 5),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[39] == '6' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
@@ -1199,22 +1201,22 @@ class PdfTemplate516 extends PDFTemplate {
                   padding: const EdgeInsets.only(top: 1, left: 5),
                   child: Checkbox(
                     name: '',
-                    // value: ins2[3] == '1' ? true : false,
-                    value: false,
+                    value: ins[39] == '7' ? true : false,
                     width: 8,
                     height: 8,
                     decoration: _buildBoxAllSide(),
                     activeColor: PdfColor.fromHex('#000000'),
                   ),
                 ),
-                _buildText(' その他（' + insTem[6] + ' )）', fontSize: 9),
+                _buildText(' その他（ ' + ins[40] + ' )）', fontSize: 9),
               ]),
               Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: _buildText('２．雇入れ時の健康診断 ' + year3 + ' 年  ' + month3 + ' 月 ', fontSize: 9)),
+                  child: _buildText('２．雇入れ時の健康診断 ' + ins[41] + ' 年  ' + ins[42] + ' 月 ', fontSize: 9)),
               Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: _buildText('３．初回の定期健康診断 ' + year3 + ' 年  ' + month3 + ' 月 ' + '（その後 ごとに実施）', fontSize: 9)),
+                  child: _buildText('３．初回の定期健康診断 ' + ins[43] + ' 年  ' + ins[44] + ' 月 ' + '（その後 ' + ins[45] + ' ごとに実施）',
+                      fontSize: 9)),
               Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: _buildText(
@@ -1240,31 +1242,7 @@ class PdfTemplate516 extends PDFTemplate {
   }
 
   void _buildPage3() {
-    List<String> insTem = [
-      '2022/10/22',
-      'inputX',
-      '2022/10/23',
-      '2022/10/24',
-      '2022/10/25',
-      '                                          ',
-      '         ',
-      '                   ',
-    ];
-    String year1 = insTem[0] == '' ? '' : insTem[0].split('/')[0];
-    String month1 = insTem[0] == '' ? '' : insTem[0].split('/')[1];
-    String day1 = insTem[0] == '' ? '' : insTem[0].split('/')[2];
-
-    String year2 = insTem[2] == '' ? '' : insTem[2].split('/')[0];
-    String month2 = insTem[2] == '' ? '' : insTem[2].split('/')[1];
-    String day2 = insTem[2] == '' ? '' : insTem[2].split('/')[2];
-
-    String year3 = insTem[3] == '' ? '' : insTem[3].split('/')[0];
-    String month3 = insTem[3] == '' ? '' : insTem[3].split('/')[1];
-    String day3 = insTem[3] == '' ? '' : insTem[3].split('/')[2];
-
-    String year4 = insTem[4] == '' ? '' : insTem[4].split('/')[0];
-    String month4 = insTem[4] == '' ? '' : insTem[4].split('/')[1];
-    String day4 = insTem[4] == '' ? '' : insTem[4].split('/')[2];
+    List<String> ins = inputs[2];
 
     buildPage(Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Container(
@@ -1285,49 +1263,46 @@ class PdfTemplate516 extends PDFTemplate {
           padding: const EdgeInsets.only(top: 1, left: 20),
           child: Checkbox(
             name: '',
-            // value: ins2[3] == '1' ? true : false,
-            value: false,
+            value: ins[0] == '1' ? true : false,
             width: 8,
             height: 8,
             decoration: _buildBoxAllSide(),
             activeColor: PdfColor.fromHex('#000000'),
           ),
         ),
-        _buildText(' 月給（' + insTem[6] + ' 円）', fontSize: 9),
+        _buildText(' 月給（' + ins[1] + ' 円）', fontSize: 9),
         Padding(
           padding: const EdgeInsets.only(top: 1, left: 20),
           child: Checkbox(
             name: '',
-            // value: ins2[3] == '1' ? true : false,
-            value: false,
+            value: ins[0] == '2' ? true : false,
             width: 8,
             height: 8,
             decoration: _buildBoxAllSide(),
             activeColor: PdfColor.fromHex('#000000'),
           ),
         ),
-        _buildText(' 日給（' + insTem[6] + ' 円）', fontSize: 9),
+        _buildText(' 日給（' + ins[2] + ' 円）', fontSize: 9),
         Padding(
           padding: const EdgeInsets.only(top: 1, left: 20),
           child: Checkbox(
             name: '',
-            // value: ins2[3] == '1' ? true : false,
-            value: false,
+            value: ins[0] == '3' ? true : false,
             width: 8,
             height: 8,
             decoration: _buildBoxAllSide(),
             activeColor: PdfColor.fromHex('#000000'),
           ),
         ),
-        _buildText(' 時間給（' + insTem[6] + ' 円）', fontSize: 9),
+        _buildText(' 時間給（' + ins[3] + ' 円）', fontSize: 9),
       ]),
       Padding(
         padding: const EdgeInsets.fromLTRB(30, 5, 0, 5),
-        child: _buildText('※月給・日給の場合の１時間当たりの金額（' + insTem[6] + ' 円）', fontSize: 9),
+        child: _buildText('※月給・日給の場合の１時間当たりの金額（' + ins[4] + ' 円）', fontSize: 9),
       ),
       Padding(
         padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
-        child: _buildText('※日給・時間給の場合の１か月当たりの金額（' + insTem[6] + ' 円）', fontSize: 9),
+        child: _buildText('※日給・時間給の場合の１か月当たりの金額（' + ins[5] + ' 円）', fontSize: 9),
       ),
       Padding(
         padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
@@ -1335,19 +1310,19 @@ class PdfTemplate516 extends PDFTemplate {
       ),
       Padding(
         padding: const EdgeInsets.fromLTRB(30, 5, 0, 5),
-        child: _buildText('(a) （' + insTem[6] + ' 手当' + insTem[6] + ' 円／計算方法：' + insTem[6] + '）', fontSize: 9),
+        child: _buildText('(a) （' + ins[6] + ' 手当 ' + ins[7] + ' 円／計算方法：' + ins[8] + '）', fontSize: 9),
       ),
       Padding(
         padding: const EdgeInsets.fromLTRB(30, 5, 0, 5),
-        child: _buildText('(b) （' + insTem[6] + ' 手当' + insTem[6] + ' 円／計算方法：' + insTem[6] + '）', fontSize: 9),
+        child: _buildText('(b) （' + ins[9] + ' 手当 ' + ins[10] + ' 円／計算方法：' + ins[11] + '）', fontSize: 9),
       ),
       Padding(
         padding: const EdgeInsets.fromLTRB(30, 5, 0, 5),
-        child: _buildText('(c) （' + insTem[6] + ' 手当' + insTem[6] + ' 円／計算方法：' + insTem[6] + '）', fontSize: 9),
+        child: _buildText('(c) （' + ins[12] + ' 手当 ' + ins[13] + ' 円／計算方法：' + ins[14] + '）', fontSize: 9),
       ),
       Padding(
         padding: const EdgeInsets.fromLTRB(30, 5, 0, 0),
-        child: _buildText('(d) （' + insTem[6] + ' 手当' + insTem[6] + ' 円／計算方法：' + insTem[6] + '）', fontSize: 9),
+        child: _buildText('(d) （' + ins[15] + ' 手当 ' + ins[16] + ' 円／計算方法：' + ins[17] + '）', fontSize: 9),
       ),
       Row(children: [
         Container(
@@ -1356,7 +1331,9 @@ class PdfTemplate516 extends PDFTemplate {
           child: _buildText('３．１か月当たりの支払概算額（１＋２） ', fontSize: 9),
         ),
         Container(
-            decoration: _buildBoxUnderLine(width: 0.5), child: _buildText('約' + insTem[5] + ' 円（合計）', fontSize: 9))
+            alignment: Alignment.centerLeft,
+            decoration: _buildBoxUnderLine(width: 0.5),
+            child: _buildText('約   ' + ins[18] + '     円（合計）', fontSize: 9))
       ]),
       Padding(
         padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
@@ -1368,7 +1345,7 @@ class PdfTemplate516 extends PDFTemplate {
           padding: const EdgeInsets.fromLTRB(25, 5, 0, 5),
           child: _buildText('(a) 税           金', fontSize: 9),
         ),
-        _buildText('（約' + insTem[6] + ' 円）', fontSize: 9),
+        _buildText('（約 ' + ins[19] + ' 円）', fontSize: 9),
       ]),
       Row(children: [
         Container(
@@ -1376,7 +1353,7 @@ class PdfTemplate516 extends PDFTemplate {
           padding: const EdgeInsets.fromLTRB(25, 5, 0, 5),
           child: _buildText('(b) 社会保険料 ', fontSize: 9),
         ),
-        _buildText('（約' + insTem[6] + ' 円）', fontSize: 9),
+        _buildText('（約 ' + ins[20] + ' 円）', fontSize: 9),
       ]),
       Row(children: [
         Container(
@@ -1384,7 +1361,7 @@ class PdfTemplate516 extends PDFTemplate {
           padding: const EdgeInsets.fromLTRB(25, 5, 0, 5),
           child: _buildText('(c) 雇用保険料', fontSize: 9),
         ),
-        _buildText('（約' + insTem[6] + ' 円）', fontSize: 9),
+        _buildText('（約 ' + ins[21] + ' 円）', fontSize: 9),
       ]),
       Row(children: [
         Container(
@@ -1392,7 +1369,7 @@ class PdfTemplate516 extends PDFTemplate {
           padding: const EdgeInsets.fromLTRB(25, 5, 0, 5),
           child: _buildText('(d) 食           費', fontSize: 9),
         ),
-        _buildText('（約' + insTem[6] + ' 円）', fontSize: 9),
+        _buildText('（約 ' + ins[22] + ' 円）', fontSize: 9),
       ]),
       Row(children: [
         Container(
@@ -1400,7 +1377,7 @@ class PdfTemplate516 extends PDFTemplate {
           padding: const EdgeInsets.fromLTRB(25, 5, 0, 5),
           child: _buildText('(e) 居    住    費 ', fontSize: 9),
         ),
-        _buildText('（約' + insTem[6] + ' 円）', fontSize: 9),
+        _buildText('（約 ' + ins[23] + ' 円）', fontSize: 9),
       ]),
       Row(children: [
         Container(
@@ -1413,7 +1390,7 @@ class PdfTemplate516 extends PDFTemplate {
           padding: const EdgeInsets.fromLTRB(5, 5, 0, 5),
           child: _buildText('（水道光熱費）', fontSize: 9),
         ),
-        _buildText('（約' + insTem[6] + ' 円）', fontSize: 9),
+        _buildText('（約 ' + ins[24] + ' 円）', fontSize: 9),
       ]),
       Row(children: [
         Container(
@@ -1424,9 +1401,9 @@ class PdfTemplate516 extends PDFTemplate {
         Container(
           width: 90,
           padding: const EdgeInsets.fromLTRB(5, 5, 0, 5),
-          child: _buildText('（' + insTem[7] + '）', fontSize: 9),
+          child: _buildText('（ ' + ins[25] + ' ）', fontSize: 9),
         ),
-        _buildText('（約' + insTem[6] + ' 円）', fontSize: 9),
+        _buildText('（約  ' + ins[26] + ' 円）', fontSize: 9),
       ]),
       Row(children: [
         Container(
@@ -1437,9 +1414,9 @@ class PdfTemplate516 extends PDFTemplate {
         Container(
           width: 90,
           padding: const EdgeInsets.fromLTRB(5, 5, 0, 5),
-          child: _buildText('（' + insTem[7] + '）', fontSize: 9),
+          child: _buildText('（ ' + ins[27] + '  ）', fontSize: 9),
         ),
-        _buildText('（約' + insTem[6] + ' 円）', fontSize: 9),
+        _buildText('（約  ' + ins[28] + ' 円）', fontSize: 9),
       ]),
       Row(children: [
         Container(
@@ -1450,9 +1427,9 @@ class PdfTemplate516 extends PDFTemplate {
         Container(
           width: 90,
           padding: const EdgeInsets.fromLTRB(5, 5, 0, 5),
-          child: _buildText('（' + insTem[7] + '）', fontSize: 9),
+          child: _buildText('（ ' + ins[29] + ' ）', fontSize: 9),
         ),
-        _buildText('（約' + insTem[6] + ' 円）', fontSize: 9),
+        _buildText('（約  ' + ins[30] + ' 円）', fontSize: 9),
       ]),
       Row(children: [
         Container(
@@ -1463,9 +1440,9 @@ class PdfTemplate516 extends PDFTemplate {
         Container(
           width: 90,
           padding: const EdgeInsets.fromLTRB(5, 5, 0, 5),
-          child: _buildText('（' + insTem[7] + '）', fontSize: 9),
+          child: _buildText('（ ' + ins[31] + ' ）', fontSize: 9),
         ),
-        _buildText('（約' + insTem[6] + ' 円）', fontSize: 9),
+        _buildText('（約  ' + ins[32] + ' 円）', fontSize: 9),
       ]),
       Row(children: [
         Container(
@@ -1476,16 +1453,17 @@ class PdfTemplate516 extends PDFTemplate {
         Container(
           width: 90,
           padding: const EdgeInsets.fromLTRB(5, 5, 0, 5),
-          child: _buildText('（' + insTem[7] + '）', fontSize: 9),
+          child: _buildText('（ ' + ins[33] + ' ）', fontSize: 9),
         ),
-        _buildText('（約' + insTem[6] + ' 円）', fontSize: 9),
+        _buildText('（約  ' + ins[34] + ' 円）', fontSize: 9),
       ]),
       Row(children: [
         Container(width: 285, alignment: Alignment.centerRight, child: _buildText('控除する金額', fontSize: 9)),
         Container(
+            alignment: Alignment.centerLeft,
             margin: const EdgeInsets.only(left: 15),
             decoration: _buildBoxUnderLine(width: 0.5),
-            child: _buildText('約' + insTem[5] + ' 円（合計）', fontSize: 9))
+            child: _buildText('約 ' + ins[35] + ' 円（合計）', fontSize: 9))
       ]),
       Row(children: [
         Container(
@@ -1493,8 +1471,7 @@ class PdfTemplate516 extends PDFTemplate {
           padding: const EdgeInsets.fromLTRB(10, 20, 0, 20),
           child: _buildText('５．手取り支給額（３－４）', fontSize: 9),
         ),
-        Container(
-            decoration: _buildBoxUnderLine(width: 0.5), child: _buildText('約' + insTem[5] + ' 円（合計）', fontSize: 9))
+        Container(decoration: _buildBoxUnderLine(width: 0.5), child: _buildText('約 ' + ins[36] + ' 円（合計）', fontSize: 9))
       ]),
       Container(alignment: Alignment.centerRight, child: _buildText('※欠勤等がない場合であって，時間外労働の割増賃金等は除く。', fontSize: 9))
     ]));
