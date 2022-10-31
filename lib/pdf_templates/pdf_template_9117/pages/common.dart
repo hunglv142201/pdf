@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
 
@@ -41,6 +42,26 @@ class Common {
         children: widgets,
       ),
       center: center,
+      width: width,
+      height: height,
+    );
+  }
+
+  Widget boxDivider({double width = 1, double height = 1}) {
+    double length = math.sqrt(width * width + height * height);
+    double angle = math.atan(width / height);
+
+    return box(
+      Transform.rotate(
+        angle: -angle,
+        child: Center(
+          child: Container(
+            height: length,
+            width: 1,
+            decoration: BoxDecoration(border: Border.all(width: 0.5)),
+          ),
+        ),
+      ),
       width: width,
       height: height,
     );

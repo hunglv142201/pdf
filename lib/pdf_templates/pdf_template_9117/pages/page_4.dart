@@ -59,7 +59,7 @@ class Page4 {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                c.box(c.verticalText('２出入国する際の送迎')),
+                c.box(c.verticalText('２出入国する際の送迎'), height: 208),
                 Table(
                   defaultVerticalAlignment: TableCellVerticalAlignment.full,
                   children: [
@@ -113,55 +113,82 @@ class Page4 {
                         c.boxText(ins[13], width: 115, height: 50),
                         c.boxText(ins[14], width: 260, height: 50),
                       ]),
-                      c.box(c.booleanInputWithText(ins[15], label1: '出国予定空港等', label2: '送迎方法', trailing1: '空港/未定'),
-                          width: 195),
+                      c.boxText(ins[15], width: 195),
                     ]),
                   ],
                 ),
               ],
             ),
             Expanded(
-              child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+              child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 c.box(c.verticalText('３適切な住居の確保に係る支援・生活に必要な契約に係る支援')),
                 c.box(c.verticalText('ア適切な住居の確保に係る支援')),
-                  Table(defaultVerticalAlignment: TableCellVerticalAlignment.full, children: [
-                    // --- 3.1 ---
-                    TableRow(children: [
-                      c.boxText('支援内容', center: true, width: 177),
-                      c.boxText('実施予定', center: true, width: 160),
-                      c.verticalBoxText(['委託の', '有 無'], width: 70),
-                      Column(children: [
-                        c.boxText(('支援担当者又は委託を受けた実施担当者'), center: true, width: 375),
-                        Row(children: [
-                          c.verticalBoxText([('氏名'), ('（役職）')], width: 115),
-                          c.verticalBoxText([('住所'), ('（委託を受けた場合のみ）')], width: 260),
-                        ]),
-                      ]),
-                    ]),
-
-                    // --- 3.2 ---
-                    TableRow(children: [
-                      c.boxText(
-                          ('ａ．不動産仲介事業者や賃貸物件の情報を提供し，必要に応じて住宅確保に係る手続に同行し，住居探しの補助を行う。また，賃貸借契約の締結時に連帯保証人が必要な場合に，適当な連帯保証人がいないときは，支援対象者の連帯保証人となる又は利用可能な家賃債務保証業者を確保し自らが緊急連絡先となる'),
-                          width: 177),
-                      c.box(c.booleanInputWithText(ins[16]), width: 160),
-                      c.box(c.optionInput(ins[17]), width: 70),
+                Table(defaultVerticalAlignment: TableCellVerticalAlignment.full, children: [
+                  // --- 3.1 ---
+                  TableRow(children: [
+                    c.boxText('支援内容', center: true, width: 177),
+                    c.boxText('実施予定', center: true, width: 160),
+                    c.verticalBoxText(['委託の', '有 無'], width: 70),
+                    Column(children: [
+                      c.boxText(('支援担当者又は委託を受けた実施担当者'), center: true, width: 375),
                       Row(children: [
-                        c.boxText(ins[18], width: 115, height: 150),
-                        c.boxText(ins[19], width: 260, height: 150),
+                        c.verticalBoxText([('氏名'), ('（役職）')], width: 115),
+                        c.verticalBoxText([('住所'), ('（委託を受けた場合のみ）')], width: 260),
                       ]),
                     ]),
-
-                    // --- 3.3 ---
-                    TableRow(children: []),
-
-                    // --- 3.4 ---
-                    TableRow(children: []),
-
-                    // --- 3.5 ---
-                    TableRow(children: []),
                   ]),
-                c.box(Container(), width: 195),
+
+                  // --- 3.2 ---
+                  TableRow(children: [
+                    c.boxText(
+                        ('ａ．不動産仲介事業者や賃貸物件の情報を提供し，必要に応じて住宅確保に係る手続に同行し，住居探しの補助を行う。また，賃貸借契約の締結時に連帯保証人が必要な場合に，適当な連帯保証人がいないときは，支援対象者の連帯保証人となる又は利用可能な家賃債務保証業者を確保し自らが緊急連絡先となる'),
+                        width: 177),
+                    c.box(c.booleanInputWithText(ins[16]), width: 160),
+                    c.box(c.optionInput(ins[17]), width: 70),
+                    Row(children: [
+                      c.boxText(ins[18], width: 115, height: 150),
+                      c.boxText(ins[19], width: 260, height: 150),
+                    ]),
+                  ]),
+
+                  // --- 3.3 ---
+                  TableRow(children: [
+                    c.boxText(('ｂ．自ら賃借人となって賃貸借契約を締結した上で，１号特定技能外国人の合意の下，住居として提供する'), width: 177),
+                    c.box(c.booleanInputWithText(ins[20]), width: 160),
+                    c.box(c.optionInput(ins[21]), width: 70),
+                    Row(children: [
+                      c.boxText(ins[22], width: 115, height: 105),
+                      c.boxText(ins[23], width: 260, height: 105),
+                    ]),
+                  ]),
+
+                  // --- 3.4 ---
+                  TableRow(children: [
+                    c.boxText(('ｃ．所有する社宅等を，１号特定技能外国人の合意の下，当該外国人に対して住居として提供する'), width: 177),
+                    c.box(c.booleanInputWithText(ins[24]), width: 160),
+                    c.box(c.optionInput(ins[25]), width: 70),
+                    Row(children: [
+                      c.boxText(ins[26], width: 115, height: 105),
+                      c.boxText(ins[27], width: 260, height: 105),
+                    ]),
+                  ]),
+
+                  // --- 3.5 ---
+                  TableRow(children: [
+                    c.verticalBoxText(['（自由記入）', ins[28]], width: 177),
+                    c.box(c.booleanInputWithText(ins[29]), width: 160),
+                    c.box(c.optionInput(ins[30]), width: 70),
+                    Row(children: [
+                      c.boxText(ins[31], width: 115, height: 102.5),
+                      c.boxText(ins[32], width: 260, height: 102.5),
+                    ]),
+                  ]),
+                ]),
+                Column(children: [
+                  c.boxText('実施方法', width: 195, height: 58, center: true),
+                  c.boxDivider(width: 195, height: 360),
+                  c.boxText(ins[33], width: 195, height: 102.5),
+                ]),
               ]),
             ),
           ],
