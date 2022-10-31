@@ -8,10 +8,11 @@ abstract class PDFTemplate {
 
   Future<Uint8List> build();
 
-  void buildPage(Widget widget, {PdfPageFormat pageFormat = PdfPageFormat.a4}) {
+  void buildPage(Widget widget, {PdfPageFormat pageFormat = PdfPageFormat.a4, PageOrientation? pageOrientation}) {
     pdf.addPage(
       Page(
         pageFormat: pageFormat,
+        orientation: pageOrientation,
         build: (Context context) {
           return widget;
         },
