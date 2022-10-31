@@ -33,6 +33,16 @@ class Common {
     );
   }
 
+  Widget boxNoBorder({bool? center, double? width, double? height}) {
+    return Container(
+      width: width,
+      height: height,
+      padding: const EdgeInsets.all(4.0),
+      decoration: BoxDecoration(border: Border.all(style: BorderStyle.none)),
+      child: text(''),
+    );
+  }
+
   Widget verticalBox(List<Widget> widgets, {bool? center, double? width, double? height}) {
     return box(
       Column(

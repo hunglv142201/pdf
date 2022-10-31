@@ -1,5 +1,6 @@
 import 'package:pdf/widgets.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_9117/pages/common.dart';
+import 'package:pdf/pdf.dart';
 
 class Page9 {
   static Widget buildPage(List<String> inputs, Font font) {
@@ -59,7 +60,16 @@ class Page9 {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                c.box(c.verticalText('職支援（続き）\n８ 非自発的離職時の転')),
+                Container(
+                  height: 160,
+                  alignment: Alignment.center,
+                  decoration: _buildBoxAllSide(),
+                  child: Row(children: [
+                    c.verticalText('職支援（続き）'),
+                    c.verticalText(' ８ 非自発的離職時の転'),
+                  ]),
+                ),
+                // c.box(c.verticalText('職支援（続き）８ 非自発的離職時の転')),
                 Table(
                   defaultVerticalAlignment: TableCellVerticalAlignment.full,
                   children: [
@@ -150,6 +160,24 @@ class Page9 {
           ],
         ),
       ],
+    );
+  }
+
+  static BoxDecoration _buildBoxAllSide({String color = '#000000', double width = 1}) {
+    return BoxDecoration(
+      border: Border.all(color: PdfColor.fromHex(color), width: width),
+    );
+  }
+
+  static BoxDecoration _buildBoxUnderLine({String color = '#000000', double width = 1}) {
+    return BoxDecoration(
+      border: Border(bottom: BorderSide(color: PdfColor.fromHex(color), width: width)),
+    );
+  }
+
+  static BoxDecoration _buildBoxTopLine({String color = '#000000', double width = 1}) {
+    return BoxDecoration(
+      border: Border(top: BorderSide(color: PdfColor.fromHex(color), width: width)),
     );
   }
 }
