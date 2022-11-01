@@ -60,8 +60,11 @@ class Page9 {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // ８ 非自発的離職時の転
                 Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 2),
                   height: 160,
+                  width: 25,
                   alignment: Alignment.center,
                   decoration: _buildBoxAllSide(),
                   child: Row(children: [
@@ -69,11 +72,10 @@ class Page9 {
                     c.verticalText(' ８ 非自発的離職時の転'),
                   ]),
                 ),
-                // c.box(c.verticalText('職支援（続き）８ 非自発的離職時の転')),
                 Table(
                   defaultVerticalAlignment: TableCellVerticalAlignment.full,
                   children: [
-                    // --- 2.1 ---
+                    // --- 8 ---
                     TableRow(children: [
                       c.boxText(('f．離職時に必要な行政手続について情報を提供する'), width: 195, height: 50),
                       c.box(c.booleanInputWithText(ins[0]), width: 160),
@@ -115,48 +117,104 @@ class Page9 {
             ),
             Expanded(
               child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                c.box(c.verticalText('９ 定期的な面談の実施・行政機関への通報')),
-                c.box(c.verticalText('ア   面談内容等')),
+                Container(
+                  width: 25,
+                  alignment: Alignment.center,
+                  decoration: _buildBoxAllSide(),
+                  child: c.verticalText('９ 定期的な面談の実施・行政機関への通報'),
+                ),
+                c.box(c.verticalText('ア   面談内容等'), height: 290 + 80, width: 20),
                 Table(defaultVerticalAlignment: TableCellVerticalAlignment.full, children: [
-                  // --- 3.1 ---
+                  // --- Title ---
                   TableRow(children: [
                     c.boxText('支援内容', center: true, width: 177),
                     c.boxText('実施予定', center: true, width: 160),
-                    c.verticalBoxText(['委託の', '有 無'], width: 70),
+                    c.verticalBoxText(['委託の', '有   無'], width: 70),
                     Column(children: [
-                      c.boxText(('支援担当者又は委託を受けた実施担当者'), center: true, width: 375),
+                      Column(children: [
+                        Container(
+                          decoration: _buildBoxTopLine(width: 1),
+                          padding: const EdgeInsets.only(top: 4),
+                          alignment: Alignment.center,
+                          height: 20,
+                          width: 375,
+                          child: _buildText('支援担当者又は委託を受けた実施担当者', font),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(bottom: 4),
+                          alignment: Alignment.center,
+                          height: 20,
+                          width: 375,
+                          child: _buildText('※ｂ欄及び自由記入欄については，委託を受けた実施担当者も可', font, fontSize: 9),
+                        ),
+                      ]),
                       Row(children: [
-                        c.verticalBoxText([('氏名'), ('（役職）')], width: 115),
-                        c.verticalBoxText([('住所'), ('（委託を受けた場合のみ）')], width: 260),
+                        c.verticalBoxText([('氏名'), ('（役職）')], width: 115, height: 40),
+                        c.verticalBoxText([('住所'), ('（委託を受けた場合のみ）')], width: 260, height: 40),
                       ]),
                     ]),
+                    c.verticalBoxText(['実施方法', '（該当するもの全てにチェック） '], width: 195),
                   ]),
 
-                  // --- 3.2 ---
+                  // --- a.  ---
                   TableRow(children: [
-                    c.boxText(
-                        ('ａ．不動産仲介事業者や賃貸物件の情報を提供し，必要に応じて住宅確保に係る手続に同行し，住居探しの補助を行う。また，賃貸借契約の締結時に連帯保証人が必要な場合に，適当な連帯保証人がいないときは，支援対象者の連帯保証人となる又は利用可能な家賃債務保証業者を確保し自らが緊急連絡先となる'),
-                        width: 177),
-                    c.box(c.booleanInputWithText(ins[16]), width: 160),
+                    Column(children: [
+                      c.boxText(('ａ．１号特定技能外国人の労働状況や生活状況を確認するため，当該外国人及びその監督をする立場にある者それぞれと定期的な面談（3か月に1回以上）を実施する'),
+                          width: 177, height: 75, center: true),
+                      c.boxText(('ｂ．再確認のため，生活オリエンテーションにおいて提供した情報について，改めて提供する'), width: 177, height: 45, center: true),
+                      c.boxText(('ｃ．労働基準法その他の労働に関する法令の規定に違反していることを知ったときは，労働基準監督署その他の関係行政機関へ通報する'),
+                          width: 177, height: 60, center: true),
+                      c.boxText(('ｄ．資格外活動等の入管法違反又は旅券及び在留カードの取上げ等その他の問題の発生を知ったときは，その旨を地方出入国在留管理局に通報する'),
+                          width: 177, height: 60, center: true),
+                    ]),
+                    Column(mainAxisSize: MainAxisSize.max, children: [
+                      c.box(c.booleanInputWithText(ins[16]), width: 160, height: 120),
+                      c.box(c.booleanInputWithText(ins[16]), width: 160, height: 120),
+                    ]),
                     c.box(c.optionInput(ins[17]), width: 70),
                     Row(children: [
-                      c.boxText(ins[18], width: 115, height: 150),
-                      c.boxText(ins[19], width: 260, height: 150),
+                      c.boxText(ins[18], width: 115, height: 240),
+                      c.boxText(ins[19], width: 260, height: 240),
+                    ]),
+                    Column(children: [
+                      c.box(c.booleanInputWithText('', label1: ' 対面', label2: ' 無線や船舶電話（漁船漁業のみ）'),
+                          width: 195, height: 75),
+                      c.box(c.boxNoBorder(), width: 195, height: 165),
                     ]),
                   ]),
+                  TableRow(children: [
+                    c.verticalBoxText(['（自由記入）', ins[10]], width: 177),
+                    c.box(c.booleanInputWithText(ins[11]), width: 160),
+                    c.box(c.optionInput(ins[12]), width: 70),
+                    Row(children: [
+                      c.boxText(ins[13], width: 115, height: 50),
+                      c.boxText(ins[14], width: 260, height: 50),
+                    ]),
+                    c.box(c.boxNoBorder(), width: 195),
+                  ]),
 
-                  // --- 3.3 ---
-                  TableRow(children: []),
+                  // // --- 3.3 ---
+                  // TableRow(children: []),
 
-                  // --- 3.4 ---
-                  TableRow(children: []),
+                  // // --- 3.4 ---
+                  // TableRow(children: []),
 
-                  // --- 3.5 ---
-                  TableRow(children: []),
+                  // // --- 3.5 ---
+                  // TableRow(children: []),
                 ]),
-                c.box(Container(), width: 195),
               ]),
             ),
+            Row(children: [
+              Container(
+                  // width: ,
+                  decoration: _buildBoxAllSide(),
+                  alignment: Alignment.centerLeft,
+                  child: _buildText('イ 実施言語 ', font)),
+              Container(
+                  decoration: _buildBoxAllSide(),
+                  alignment: Alignment.center,
+                  child: _buildText('語 （支援担当者以外の者が通訳を担う場合）通訳者の所属・氏名', font)),
+            ])
           ],
         ),
       ],
@@ -179,5 +237,13 @@ class Page9 {
     return BoxDecoration(
       border: Border(top: BorderSide(color: PdfColor.fromHex(color), width: width)),
     );
+  }
+
+  static Widget _buildText(String text, Font font, {double fontSize = 0}) {
+    if (fontSize == 0) {
+      return Text(text, style: TextStyle(font: font, fontSize: 10));
+    } else {
+      return Text(text, style: TextStyle(font: font, fontSize: fontSize));
+    }
   }
 }
