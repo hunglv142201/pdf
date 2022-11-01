@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
 
@@ -56,6 +57,57 @@ class Common {
     );
   }
 
+  Widget boxDivider({double width = 1, double height = 1}) {
+    double length = math.sqrt(width * width + height * height);
+    double angle = math.atan(width / height);
+
+    return box(
+      Transform.rotate(
+        angle: -angle,
+        child: Center(
+          child: Container(
+            height: length,
+            width: 1,
+            decoration: BoxDecoration(border: Border.all(width: 0.5)),
+          ),
+        ),
+      ),
+      width: width,
+      height: height,
+    );
+  }
+
+  Widget threeBooleanInput(String? inputs, List<String> labels, {List<String?>? trailings, List<bool>? allowText}) {
+    String? value;
+    String? txt;
+    if (inputs != null) {
+      try {
+        value = inputs[0];
+        txt = inputs.substring(1);
+      } on dynamic catch (err) {}
+    }
+
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      Row(children: [
+        Checkbox(value: value == '1', name: ''),
+        text(
+            '   ${labels[0]} ${allowText?[0] == true ? '(${value == '1' ? (txt ?? '') : ''}${trailings?[0] ?? ''})' : ''}')
+      ]),
+      SizedBox(height: 8),
+      Row(children: [
+        Checkbox(value: value == '2', name: ''),
+        text(
+            '   ${labels[1]} ${allowText?[1] == true ? '(${value == '2' ? (txt ?? '') : ''}${trailings?[1] ?? ''})' : ''}')
+      ]),
+      SizedBox(height: 8),
+      Row(children: [
+        Checkbox(value: value == '3', name: ''),
+        text(
+            '   ${labels[2]} ${allowText?[2] == true ? '(${value == '3' ? (txt ?? '') : ''}${trailings?[2] ?? ''})' : ''}')
+      ]),
+    ]);
+  }
+
   Widget booleanInputWithText(String? inputs, {String? label1, String? label2, String? trailing1, String? trailing2}) {
     String? value;
     String? txt;
@@ -76,6 +128,14 @@ class Common {
         Checkbox(value: value == '2', name: ''),
         text('   ${label1 ?? '無'} (${value == '2' ? (txt ?? '') : ''})${trailing2 ?? ''}')
       ]),
+    ]);
+  }
+
+  Widget booleanInput(String? value, {String? label1, String? label2, String? trailing1, String? trailing2}) {
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      Row(children: [Checkbox(value: value == '1', name: ''), text('   ${label1 ?? '有'}')]),
+      SizedBox(height: 8),
+      Row(children: [Checkbox(value: value == '2', name: ''), text('   ${label1 ?? '無'}')]),
     ]);
   }
 
@@ -104,5 +164,33 @@ class Common {
 
   Widget text(String? txt, {double fontSize = 10}) {
     return Text(txt ?? '', style: TextStyle(font: font, fontSize: fontSize));
+  }
+
+  Widget buildDoubleLineText(String text1, Font font1, String text2, Font font2,
+      {double fontSize = 0, double ratio = 2 / 3, double space = -2.0}) {
+    if (fontSize == 0) {
+      return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Padding(padding: const EdgeInsets.only(), child: Text(text1, style: TextStyle(font: font1))),
+        Padding(padding: EdgeInsets.only(top: space), child: Text(text2, style: TextStyle(font: font2))),
+      ]);
+    } else {
+      return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Padding(
+            padding: const EdgeInsets.only(), child: Text(text1, style: TextStyle(font: font1, fontSize: fontSize))),
+        Padding(
+            padding: EdgeInsets.only(top: space),
+            child: Text(text2, style: TextStyle(font: font2, fontSize: fontSize * ratio))),
+      ]);
+    }
+  }
+
+  Widget tInput(String? txt1, String? txt2, {double fontSize = 10, double? height}) {
+    return Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+      SizedBox(width: 2),
+      text('〒', fontSize: fontSize),
+      Container(alignment: Alignment.center, height: height, width: 50, child: text(txt1, fontSize: fontSize)),
+      text(' - ', fontSize: fontSize),
+      Container(alignment: Alignment.center, height: height, width: 50, child: text(txt2, fontSize: fontSize)),
+    ]);
   }
 }
