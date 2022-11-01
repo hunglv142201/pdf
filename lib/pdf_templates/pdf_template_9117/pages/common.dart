@@ -6,11 +6,14 @@ class Common {
 
   final Font font;
 
-  Widget boxText(String? txt, {double fontSize = 10, bool? center, double? width, double? height}) {
-    return box(text(txt, fontSize: fontSize), center: center, width: width, height: height);
+  Widget boxText(String? txt,
+      {double fontSize = 10, bool? center, double? width, double? height}) {
+    return box(text(txt, fontSize: fontSize),
+        center: center, width: width, height: height);
   }
 
-  Widget verticalBoxText(List<String?> txt, {double fontSize = 10, bool? center, double? width, double? height}) {
+  Widget verticalBoxText(List<String?> txt,
+      {double fontSize = 10, bool? center, double? width, double? height}) {
     return box(
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -28,12 +31,14 @@ class Common {
       width: width,
       height: height,
       padding: const EdgeInsets.all(4.0),
-      decoration: BoxDecoration(border: Border.all(width: 1, color: PdfColors.black)),
+      decoration:
+          BoxDecoration(border: Border.all(width: 1, color: PdfColors.black)),
       child: center == true ? Center(child: widget) : widget,
     );
   }
 
-  Widget verticalBox(List<Widget> widgets, {bool? center, double? width, double? height}) {
+  Widget verticalBox(List<Widget> widgets,
+      {bool? center, double? width, double? height}) {
     return box(
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -46,7 +51,8 @@ class Common {
     );
   }
 
-  Widget booleanInputWithText(String? inputs, {String? label1, String? label2, String? trailing1, String? trailing2}) {
+  Widget booleanInputWithText(String? inputs,
+      {String? label1, String? label2, String? trailing1, String? trailing2}) {
     String? value;
     String? txt;
     if (inputs != null) {
@@ -59,12 +65,14 @@ class Common {
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Row(children: [
         Checkbox(value: value == '1', name: ''),
-        text('   ${label1 ?? '有'} (${value == '1' ? (txt ?? '') : ''}${trailing1 ?? ''})')
+        text(
+            '   ${label1 ?? '有'} (${value == '1' ? (txt ?? '') : ''}${trailing1 ?? ''})')
       ]),
       SizedBox(height: 8),
       Row(children: [
         Checkbox(value: value == '2', name: ''),
-        text('   ${label1 ?? '無'} (${value == '2' ? (txt ?? '') : ''})${trailing2 ?? ''}')
+        text(
+            '   ${label1 ?? '無'} (${value == '2' ? (txt ?? '') : ''})${trailing2 ?? ''}')
       ]),
     ]);
   }
@@ -94,5 +102,49 @@ class Common {
 
   Widget text(String? txt, {double fontSize = 10}) {
     return Text(txt ?? '', style: TextStyle(font: font, fontSize: fontSize));
+  }
+
+  Widget buildDoubleLineText(String text1, Font font1, String text2, Font font2,
+      {double fontSize = 0, double ratio = 2 / 3, double space = -2.0}) {
+    if (fontSize == 0) {
+      return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Padding(
+            padding: const EdgeInsets.only(),
+            child: Text(text1, style: TextStyle(font: font1))),
+        Padding(
+            padding: EdgeInsets.only(top: space),
+            child: Text(text2, style: TextStyle(font: font2))),
+      ]);
+    } else {
+      return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Padding(
+            padding: const EdgeInsets.only(),
+            child:
+                Text(text1, style: TextStyle(font: font1, fontSize: fontSize))),
+        Padding(
+            padding: EdgeInsets.only(top: space),
+            child: Text(text2,
+                style: TextStyle(font: font2, fontSize: fontSize * ratio))),
+      ]);
+    }
+  }
+
+  Widget tInput(String? txt1, String? txt2,
+      {double fontSize = 10, double? height}) {
+    return Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+      SizedBox(width: 2),
+      text('〒', fontSize: fontSize),
+      Container(
+          alignment: Alignment.center,
+          height: height,
+          width: 50,
+          child: text(txt1, fontSize: fontSize)),
+      text(' - ', fontSize: fontSize),
+      Container(
+          alignment: Alignment.center,
+          height: height,
+          width: 50,
+          child: text(txt2, fontSize: fontSize)),
+    ]);
   }
 }
