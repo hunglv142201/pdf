@@ -143,7 +143,7 @@ class Page1 {
                 TableRow(children: [c.boxText('II.12 input', height: 30)]),
                 TableRow(children: [
                   Table(columnWidths: {
-                    0: const FractionColumnWidth(0.712),
+                    0: const FractionColumnWidth(0.8),
                     1: const FlexColumnWidth(),
                   }, children: [
                     TableRow(children: [
@@ -176,7 +176,7 @@ class Page1 {
                 ]),
                 TableRow(children: [
                   Table(columnWidths: {
-                    0: const FractionColumnWidth(0.712),
+                    0: const FractionColumnWidth(0.8),
                     1: const FlexColumnWidth(),
                   }, children: [
                     TableRow(children: [
