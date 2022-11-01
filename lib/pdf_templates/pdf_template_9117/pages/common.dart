@@ -126,7 +126,7 @@ class Common {
       SizedBox(height: 8),
       Row(children: [
         Checkbox(value: value == '2', name: ''),
-        text('   ${label1 ?? '無'} (${value == '2' ? (txt ?? '') : ''})${trailing2 ?? ''}')
+        text('   ${label2 ?? '無'} (${value == '2' ? (txt ?? '') : ''}${trailing2 ?? ''})')
       ]),
     ]);
   }
