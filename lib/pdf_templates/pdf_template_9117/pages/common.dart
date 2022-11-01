@@ -67,6 +67,37 @@ class Common {
     );
   }
 
+  Widget threeBooleanInput(String? inputs, List<String> labels, {List<String?>? trailings, List<bool>? allowText}) {
+    String? value;
+    String? txt;
+    if (inputs != null) {
+      try {
+        value = inputs[0];
+        txt = inputs.substring(1);
+      } on dynamic catch (err) {}
+    }
+
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      Row(children: [
+        Checkbox(value: value == '1', name: ''),
+        text(
+            '   ${labels[0]} ${allowText?[0] == true ? '(${value == '1' ? (txt ?? '') : ''}${trailings?[0] ?? ''})' : ''}')
+      ]),
+      SizedBox(height: 8),
+      Row(children: [
+        Checkbox(value: value == '2', name: ''),
+        text(
+            '   ${labels[1]} ${allowText?[1] == true ? '(${value == '2' ? (txt ?? '') : ''}${trailings?[1] ?? ''})' : ''}')
+      ]),
+      SizedBox(height: 8),
+      Row(children: [
+        Checkbox(value: value == '3', name: ''),
+        text(
+            '   ${labels[2]} ${allowText?[2] == true ? '(${value == '3' ? (txt ?? '') : ''}${trailings?[2] ?? ''})' : ''}')
+      ]),
+    ]);
+  }
+
   Widget booleanInputWithText(String? inputs, {String? label1, String? label2, String? trailing1, String? trailing2}) {
     String? value;
     String? txt;
@@ -87,6 +118,14 @@ class Common {
         Checkbox(value: value == '2', name: ''),
         text('   ${label1 ?? '無'} (${value == '2' ? (txt ?? '') : ''})${trailing2 ?? ''}')
       ]),
+    ]);
+  }
+
+  Widget booleanInput(String? value, {String? label1, String? label2, String? trailing1, String? trailing2}) {
+    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      Row(children: [Checkbox(value: value == '1', name: ''), text('   ${label1 ?? '有'}')]),
+      SizedBox(height: 8),
+      Row(children: [Checkbox(value: value == '2', name: ''), text('   ${label1 ?? '無'}')]),
     ]);
   }
 

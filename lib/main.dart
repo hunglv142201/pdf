@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'PDF Creator',
-      initialRoute: 'home',
+      initialRoute: 'pdf_viewer',
       routes: {
         'home': (context) => const HomeScreen(),
         'pdf_viewer': (context) => PdfViewerScreen(
