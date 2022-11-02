@@ -4,17 +4,9 @@ import 'package:pdf/pdf.dart';
 
 class Page10 {
   static Widget buildPage(List<String> inputs, Font font) {
-    List<String> ins = [
-      '株式会社ＡＮＡＬＯＧ', // 1
-      '社長', // 2
-      '作成ゆみこ', // 3
-      '日本語日本語', // 4
-      '2022/10/31', // 5
-    ];
-
-    String year = ins[4] == '' ? '' : ins[4].split('/')[0];
-    String month = ins[4] == '' ? '' : ins[4].split('/')[1];
-    String day = ins[4] == '' ? '' : ins[4].split('/')[2];
+    String year = inputs[4] == '' ? '' : inputs[4].split('/')[0];
+    String month = inputs[4] == '' ? '' : inputs[4].split('/')[1];
+    String day = inputs[4] == '' ? '' : inputs[4].split('/')[2];
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,7 +50,7 @@ class Page10 {
               alignment: Alignment.center,
               width: 300,
               decoration: _buildBoxUnderLine(width: 1),
-              child: _buildText(ins[0], font, fontSize: 13))
+              child: _buildText(inputs[0], font, fontSize: 13))
         ]),
         Row(mainAxisAlignment: MainAxisAlignment.end, children: [
           Container(
@@ -71,7 +63,7 @@ class Page10 {
               alignment: Alignment.center,
               width: 300,
               decoration: _buildBoxUnderLine(width: 1),
-              child: _buildText(ins[1] + '    ' + ins[2], font, fontSize: 13)),
+              child: _buildText(inputs[1] + '    ' + inputs[2], font, fontSize: 13)),
         ]),
         Padding(
           padding: const EdgeInsets.only(top: 10, bottom: 10),
@@ -81,7 +73,7 @@ class Page10 {
               width: 150,
               alignment: Alignment.center,
               decoration: _buildBoxUnderLine(width: 1),
-              child: _buildText(ins[3], font, fontSize: 13),
+              child: _buildText(inputs[3], font, fontSize: 13),
             ),
             _buildText(' 語による翻訳文の交付を受け，その内容について説明を受け十分に理解しました。', font, fontSize: 13),
           ]),
@@ -109,7 +101,7 @@ class Page10 {
               alignment: Alignment.center,
               width: 300,
               decoration: _buildBoxUnderLine(width: 1),
-              child: _buildText(ins[1] + '    ' + ins[2], font, fontSize: 13)),
+              child: _buildText(inputs[5] + '    ' + inputs[6], font, fontSize: 13)),
         ]),
       ],
     );
