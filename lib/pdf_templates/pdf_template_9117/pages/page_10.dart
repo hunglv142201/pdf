@@ -4,6 +4,16 @@ import 'package:pdf/pdf.dart';
 
 class Page10 {
   static Widget buildPage(List<String> inputs, Font font) {
+    inputs = [
+      'input 0',
+      'input 1',
+      'input 2',
+      'input 3',
+      '2022/11/02',
+      'input 5',
+      'input 6',
+    ];
+
     String year = inputs[4] == '' ? '' : inputs[4].split('/')[0];
     String month = inputs[4] == '' ? '' : inputs[4].split('/')[1];
     String day = inputs[4] == '' ? '' : inputs[4].split('/')[2];

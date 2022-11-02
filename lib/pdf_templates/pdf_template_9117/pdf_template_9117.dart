@@ -23,21 +23,21 @@ class PdfTemplate9117 extends PDFTemplate {
   @override
   Future<Uint8List> build() async {
     font = await PdfGoogleFonts.mPLUSRounded1cRegular();
-    buildPage(Page1.buildPage([], font),
-        pageFormat: const PdfPageFormat(42 * cm, 29.7 * cm,
-            marginTop: 2 * cm, marginBottom: 2 * cm, marginLeft: 2 * cm, marginRight: 2 * cm));
-    buildPage(Page2.buildPage([], font),
-        pageFormat: const PdfPageFormat(42 * cm, 29.7 * cm,
-            marginTop: 3 * cm, marginBottom: 2 * cm, marginLeft: 2 * cm, marginRight: 2 * cm));
-    buildPage(Page3.buildPage([], font),
-        pageFormat: const PdfPageFormat(42 * cm, 29.7 * cm,
-            marginTop: 3 * cm, marginBottom: 2 * cm, marginLeft: 2 * cm, marginRight: 2 * cm));
-    buildPage(Page4.buildPage([], font), pageFormat: PdfPageFormat.a3, pageOrientation: PageOrientation.landscape);
-    buildPage(Page5.buildPage([], font), pageFormat: PdfPageFormat.a3, pageOrientation: PageOrientation.landscape);
-    buildPage(Page8.buildPage(inputs[7], font), pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
-    buildPage(Page9.buildPage(inputs[8], font), pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
-    buildPage(Page10.buildPage(inputs[0], font),
-        pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
+    // buildPage(Page1.buildPage([], font),
+    //     pageFormat: const PdfPageFormat(42 * cm, 29.7 * cm,
+    //         marginTop: 2 * cm, marginBottom: 2 * cm, marginLeft: 2 * cm, marginRight: 2 * cm));
+    // buildPage(Page2.buildPage([], font),
+    //     pageFormat: const PdfPageFormat(42 * cm, 29.7 * cm,
+    //         marginTop: 3 * cm, marginBottom: 2 * cm, marginLeft: 2 * cm, marginRight: 2 * cm));
+    // buildPage(Page3.buildPage([], font),
+    //     pageFormat: const PdfPageFormat(42 * cm, 29.7 * cm,
+    //         marginTop: 3 * cm, marginBottom: 2 * cm, marginLeft: 2 * cm, marginRight: 2 * cm));
+
+    // buildPage(Page4.buildPage([], font), pageFormat: PdfPageFormat.a3, pageOrientation: PageOrientation.landscape);
+    // buildPage(Page5.buildPage([], font), pageFormat: PdfPageFormat.a3, pageOrientation: PageOrientation.landscape);
+    buildPage(Page8.buildPage([], font), pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
+    buildPage(Page9.buildPage([], font), pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
+    buildPage(Page10.buildPage([], font), pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
     return await pdf.save();
   }
 
