@@ -195,7 +195,6 @@ class PdfFormDialog9117 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void _callback(List<List<String>> inputs) {
-      print(_tableProps);
       PdfTemplate9117 template = PdfTemplate9117(inputs);
       Navigator.of(context).pushNamed(
         'pdf_viewer',
