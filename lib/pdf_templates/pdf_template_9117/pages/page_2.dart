@@ -3,7 +3,39 @@ import 'package:pdf_creator/pdf_templates/pdf_template_9117/pages/common.dart';
 
 class Page2 {
   static Widget buildPage(List<String> inputs, Font font) {
-    List<String> ins = [];
+    inputs = [
+      'input_0',
+      '2022/12/22',
+      '2022/12/22',
+      'input_3',
+      'input_4',
+      'input_5',
+      'input_6',
+      'input_7',
+      'input_8',
+      'input_9',
+      '123456',
+      '123456',
+      '123456',
+      'input_13',
+      'input_14',
+      'input_15',
+      'input_16',
+      'input_17',
+      'input_18',
+      'input_19',
+      '123456',
+      '123456',
+      '123456',
+      'input_23',
+      'input_24',
+      'input_25',
+      'input_26',
+      'input_27',
+      'input_28',
+      'input_29',
+      '1',
+    ];
     Common c = Common(font);
 
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -90,15 +122,24 @@ class Page2 {
                       border: TableBorder.all(),
                       children: [
                         TableRow(children: [
-                          c.boxText('txt', height: 54, center: true),
+                          c.boxText(inputs[0], height: 54, center: true),
                           c.boxText('2  登録年月日', height: 54, center: true),
                           c.box(
                               Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    c.text('2022' + ' 年    '),
-                                    c.text('12' + ' 月    '),
-                                    c.text('22' + ' 日 '),
+                                    c.text((inputs[1] == ''
+                                            ? ''
+                                            : inputs[1].split('/')[0]) +
+                                        ' 年    '),
+                                    c.text((inputs[1] == ''
+                                            ? ''
+                                            : inputs[1].split('/')[1]) +
+                                        ' 月    '),
+                                    c.text((inputs[1] == ''
+                                            ? ''
+                                            : inputs[1].split('/')[2]) +
+                                        ' 日 '),
                                   ]),
                               height: 54,
                               center: true),
@@ -110,9 +151,18 @@ class Page2 {
                               Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    c.text('2022' + ' 年    '),
-                                    c.text('12' + ' 月    '),
-                                    c.text('22' + ' 日 '),
+                                    c.text((inputs[2] == ''
+                                            ? ''
+                                            : inputs[1].split('/')[0]) +
+                                        ' 年    '),
+                                    c.text((inputs[2] == ''
+                                            ? ''
+                                            : inputs[1].split('/')[1]) +
+                                        ' 月    '),
+                                    c.text((inputs[2] == ''
+                                            ? ''
+                                            : inputs[1].split('/')[2]) +
+                                        ' 日 '),
                                   ]),
                               height: 54,
                               center: true),
@@ -122,13 +172,13 @@ class Page2 {
                 // Column 3 - Row 2
                 TableRow(children: [
                   Table(border: TableBorder.all(), children: [
-                    TableRow(children: [c.boxText('txt', height: 22)]),
+                    TableRow(children: [c.boxText(inputs[3], height: 22)]),
                     TableRow(children: [
                       c.box(
                           Padding(
                               padding: const EdgeInsets.only(top: -3),
                               child: c.buildDoubleLineText(
-                                  'text1', font, 'text2', font,
+                                  inputs[4], font, inputs[5], font,
                                   fontSize: 10, ratio: 1, space: -1)),
                           height: 32)
                     ]),
@@ -141,32 +191,32 @@ class Page2 {
                     1: const FlexColumnWidth(),
                   }, children: [
                     TableRow(children: [
-                      c.tInput('111', '222223', height: 18),
+                      c.tInput(inputs[6], inputs[7], height: 18),
                       c.text('')
                     ]),
                     TableRow(children: [
-                      Container(height: 18, child: c.text(' ' + 'input')),
+                      Container(height: 18, child: c.text(' ' + inputs[8])),
                       c.text(' ')
                     ]),
                     TableRow(children: [
-                      Container(height: 18, child: c.text(' ' + 'input')),
+                      Container(height: 18, child: c.text(' ' + inputs[9])),
                       Row(children: [
                         c.text('(電話'),
                         Container(
                             alignment: Alignment.center,
-                            width: 30,
+                            width: 40,
                             height: 18,
-                            child: c.text('123')),
+                            child: c.text(inputs[10])),
                         c.text(' - '),
                         Container(
                             alignment: Alignment.center,
-                            width: 30,
-                            child: c.text('4567')),
+                            width: 40,
+                            child: c.text(inputs[11])),
                         c.text(' - '),
                         Container(
                             alignment: Alignment.center,
-                            width: 30,
-                            child: c.text('8999')),
+                            width: 40,
+                            child: c.text(inputs[12])),
                         c.text(' )'),
                       ])
                     ]),
@@ -175,13 +225,13 @@ class Page2 {
                 // Column 3 - Row 4
                 TableRow(children: [
                   Table(border: TableBorder.all(), children: [
-                    TableRow(children: [c.boxText('txt', height: 22)]),
+                    TableRow(children: [c.boxText(inputs[13], height: 22)]),
                     TableRow(children: [
                       c.box(
                           Padding(
                               padding: const EdgeInsets.only(top: 12),
                               child: c.buildDoubleLineText(
-                                  'text1', font, 'text2', font,
+                                  inputs[14], font, inputs[15], font,
                                   fontSize: 10, ratio: 1, space: 10)),
                           height: 88)
                     ]),
@@ -194,32 +244,32 @@ class Page2 {
                     1: const FlexColumnWidth(),
                   }, children: [
                     TableRow(children: [
-                      c.tInput('111', '222223', height: 18),
+                      c.tInput(inputs[16], inputs[17], height: 18),
                       c.text('')
                     ]),
                     TableRow(children: [
-                      Container(height: 18, child: c.text(' ' + 'input')),
+                      Container(height: 18, child: c.text(' ' + inputs[18])),
                       c.text(' ')
                     ]),
                     TableRow(children: [
-                      Container(height: 18, child: c.text(' ' + 'input')),
+                      Container(height: 18, child: c.text(' ' + inputs[19])),
                       Row(children: [
                         c.text('(電話'),
                         Container(
                             alignment: Alignment.center,
-                            width: 30,
+                            width: 40,
                             height: 18,
-                            child: c.text('123')),
+                            child: c.text(inputs[20])),
                         c.text(' - '),
                         Container(
                             alignment: Alignment.center,
-                            width: 30,
-                            child: c.text('4567')),
+                            width: 40,
+                            child: c.text(inputs[21])),
                         c.text(' - '),
                         Container(
                             alignment: Alignment.center,
-                            width: 30,
-                            child: c.text('8999')),
+                            width: 40,
+                            child: c.text(inputs[22])),
                         c.text(' )'),
                       ])
                     ]),
@@ -264,7 +314,7 @@ class Page2 {
                                               center: true),
                                           Table(children: [
                                             TableRow(children: [
-                                              c.boxText('input12341',
+                                              c.boxText(inputs[23],
                                                   center: true, height: 24)
                                             ]),
                                             TableRow(children: [
@@ -275,9 +325,9 @@ class Page2 {
                                                               top: -3),
                                                       child:
                                                           c.buildDoubleLineText(
-                                                              'input123412',
+                                                              inputs[24],
                                                               font,
-                                                              'input123412',
+                                                              inputs[25],
                                                               font,
                                                               fontSize: 10,
                                                               ratio: 1,
@@ -305,9 +355,9 @@ class Page2 {
                                                           top: 10),
                                                   alignment: Alignment.center,
                                                   child: c.buildDoubleLineText(
-                                                      'inputtttt',
+                                                      inputs[26],
                                                       font,
-                                                      'inputtttt',
+                                                      inputs[27],
                                                       font,
                                                       fontSize: 10,
                                                       ratio: 1,
@@ -356,7 +406,7 @@ class Page2 {
                                             width: 100,
                                             height: 58,
                                             alignment: Alignment.center,
-                                            child: c.text('input1')),
+                                            child: c.text(inputs[28])),
                                         SizedBox(width: 10),
                                         c.text('名 ')
                                       ])
@@ -369,7 +419,7 @@ class Page2 {
                                             width: 100,
                                             height: 58,
                                             alignment: Alignment.center,
-                                            child: c.text('input2')),
+                                            child: c.text(inputs[29])),
                                         SizedBox(width: 10),
                                         c.text('名 ')
                                       ])
@@ -395,7 +445,7 @@ class Page2 {
                                             '・支援責任者及び支援担当者が登録支援機関の登録拒否事由に該当しないこと',
                                             fontSize: 8),
                                         SizedBox(height: 10),
-                                        c.optionInput('1')
+                                        c.optionInput(inputs[30])
                                       ]))
                             ]),
                           ])

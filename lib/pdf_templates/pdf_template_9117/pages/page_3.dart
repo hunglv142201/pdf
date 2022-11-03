@@ -3,7 +3,29 @@ import 'package:pdf_creator/pdf_templates/pdf_template_9117/pages/common.dart';
 
 class Page3 {
   static Widget buildPage(List<String> inputs, Font font) {
-    List<String> ins = [];
+    inputs = [
+      '1',
+      'input_1',
+      'input_2',
+      '1',
+      'input_4',
+      'input_5',
+      'input_6',
+      'input_7',
+      'input_8',
+      '3',
+      'input_10',
+      'input_11',
+      '1',
+      '2',
+      'input_14',
+      'input_15',
+      'input_16',
+      'input_17',
+      'input_18',
+      'input_19',
+      'input_20',
+    ];
     Common c = Common(font);
 
     return Table(
@@ -83,7 +105,14 @@ class Page3 {
                               height: 38, center: true)
                         ]),
                         TableRow(children: [
-                          c.boxText('(自由記入)', height: 47, center: true)
+                          Container(
+                              height: 47,
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    c.text('(自由記入)'),
+                                    c.text(inputs[10])
+                                  ]))
                         ]),
                       ])
                     ])
@@ -103,7 +132,7 @@ class Page3 {
                   border: TableBorder.all(),
                   children: [
                     TableRow(children: [
-                      c.boxText('txt', height: 47, center: true),
+                      c.boxText('実施予定', height: 47, center: true),
                       c.boxText('委託の\n有   無', height: 47, center: true),
                       Column(children: [
                         c.boxText('支援担当者又は委託を受けた実施担当者',
@@ -133,14 +162,14 @@ class Page3 {
                     ]),
                     TableRow(children: [
                       c.box(
-                          c.booleanInputWithText('1',
-                              trailing1: '  inputs[1] ',
-                              trailing2: '  inputs[2] '),
+                          c.booleanInputWithText(inputs[0],
+                              trailing1: '  ' + inputs[1] + ' ',
+                              trailing2: '  ' + inputs[2] + ' '),
                           height: 406,
                           center: true),
                       Column(children: [
                         SizedBox(height: 24),
-                        c.optionInput('1'),
+                        c.optionInput(inputs[3]),
                         SizedBox(height: 30),
                         c.text('<支援内容ご\nとに異なる場\n合にはそれが\nわかるように\n以下記載>')
                       ]),
@@ -155,16 +184,16 @@ class Page3 {
                               c.box(
                                   Column(children: [
                                     SizedBox(height: 20),
-                                    c.text('input123412'),
-                                    c.text('input9874892'),
+                                    c.text(inputs[4]),
+                                    c.text(inputs[5]),
                                     SizedBox(height: 16),
                                     c.text('<支援内容ごとに異なる場\n合にはそれがわかるよう\nに以下記載>')
                                   ]),
                                   height: 406),
                               Column(children: [
-                                c.tInput('1234', '1231412'),
+                                c.tInput(inputs[6], inputs[7]),
                                 SizedBox(height: 20),
-                                c.text('input9874892123asda'),
+                                c.text(inputs[8]),
                                 SizedBox(height: 20),
                                 c.text('<支援内容ごとに異なる場合にはそれがわかるよ\nうに以下記載>')
                               ]),
@@ -174,22 +203,28 @@ class Page3 {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Row(children: [
-                              Checkbox(value: true, name: ''),
+                              Checkbox(
+                                  value: inputs[9] == '1' ? true : false,
+                                  name: ''),
                               c.text(' 対面')
                             ]),
                             SizedBox(height: 4),
                             Row(children: [
-                              Checkbox(value: false, name: ''),
+                              Checkbox(
+                                  value: inputs[9] == '2' ? true : false,
+                                  name: ''),
                               c.text(' テレビ電話装置')
                             ]),
                             SizedBox(height: 4),
                             Row(children: [
-                              Checkbox(value: false, name: ''),
+                              Checkbox(
+                                  value: inputs[9] == '3' ? true : false,
+                                  name: ''),
                               c.text(' その他('),
                               Container(
                                   width: 100,
                                   alignment: Alignment.center,
-                                  child: c.text('txt')),
+                                  child: c.text(inputs[11])),
                               c.text(' )')
                             ]),
                             SizedBox(height: 16),
@@ -197,8 +232,9 @@ class Page3 {
                           ])
                     ]),
                     TableRow(children: [
-                      c.box(c.booleanInput('1'), height: 47, center: true),
-                      c.box(c.optionInput('2'), height: 47),
+                      c.box(c.booleanInput(inputs[12]),
+                          height: 47, center: true),
+                      c.box(c.optionInput(inputs[13]), height: 47),
                       Table(
                           columnWidths: {
                             0: const FractionColumnWidth(0.36),
@@ -207,11 +243,11 @@ class Page3 {
                           border: TableBorder.all(),
                           children: [
                             TableRow(children: [
-                              c.boxText('txt', center: true, height: 47),
-                              c.boxText('txt2', center: true, height: 47),
+                              c.boxText(inputs[14], center: true, height: 47),
+                              c.boxText(inputs[15], center: true, height: 47),
                             ])
                           ]),
-                      c.box(c.text('txt'), height: 47, center: true)
+                      c.box(c.text(inputs[16]), height: 47, center: true)
                     ])
                   ]),
               c.box(
@@ -220,17 +256,17 @@ class Page3 {
                     Container(
                         alignment: Alignment.center,
                         width: 100,
-                        child: c.text('txt')),
+                        child: c.text(inputs[17])),
                     SizedBox(width: 2),
                     c.text('語    (支援担当者以外の者が通訳を担う場合)通訳者の所属・氏名 '),
                     Container(
                         alignment: Alignment.center,
                         width: 100,
-                        child: c.text('txt2')),
+                        child: c.text(inputs[18])),
                     Container(
                         alignment: Alignment.center,
                         width: 100,
-                        child: c.text('txt3')),
+                        child: c.text(inputs[19])),
                   ]),
                   height: 25,
                   center: true),
@@ -242,7 +278,7 @@ class Page3 {
                     Container(
                         alignment: Alignment.center,
                         width: 70,
-                        child: c.text('123124')),
+                        child: c.text(inputs[20])),
                     SizedBox(width: 6),
                     c.text('時間'),
                   ]),
