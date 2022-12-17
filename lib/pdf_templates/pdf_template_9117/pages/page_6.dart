@@ -3,57 +3,24 @@ import 'package:pdf/widgets.dart';
 import 'common.dart';
 
 class Page6 {
-  static Widget buildPage(List<String> inputs, Font font) {
-    List<String> ins = [
-      '', // 0
-      '', // 1
-      '', // 2
-      '', // 3
-      '', // 4
-      '', // 5
-      '', // 6
-      '', // 7
-      '', // 8
-      '', // 9
-      '', // 10
-      '', // 11
-      '', // 12
-      '', // 13
-      '', // 14
-      '', // 15
-      '', // 16
-      '', // 17
-      '', // 18
-      '', // 19
-      '', // 20
-      '', // 21
-      '', // 22
-      '', // 23
-      '', // 24
-      '', // 25
-      '', // 26
-      '', // 27
-      '', // 28
-      '', // 29
-    ];
-
+  static Widget buildPage(List<String> ins, Font font) {
     Common c = Common(font);
 
     return Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      c.box(c.verticalText('Ⅳ支援内容（続き）'), height: 658),
+      c.box(c.verticalText('Ⅳ支援内容（続き）'), height: 658, width: 30),
       Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         // --- 4 ---
         Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
           c.box(
-            Row(children: [
-              c.verticalText('（続き）'),
-              c.verticalText('４生活オリエンテーションの実施'),
-            ]),
-            height: 240,
-          ),
+              Row(children: [
+                c.verticalText('（続き）'),
+                c.verticalText('４生活オリエンテーションの実施'),
+              ]),
+              height: 240,
+              width: 30),
           Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              c.box(c.verticalText('ア情報提供内容等（続き）'), height: 196),
+              c.box(c.verticalText('ア情報提供内容等（続き）'), height: 196, width: 30),
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 c.boxText('ｄ．十分に理解することができる言語により医療を受けることができる医療機関に関する事項', width: 177),
                 c.boxText('ｅ．防 災 ・ 防 犯 に 関 す る事 項， 急病その他の緊急時におけ る 対 応 に 必 要 な 事 項', width: 177),
@@ -82,11 +49,11 @@ class Page6 {
               ]),
             ]),
             Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              c.boxText('イ実施言語', width: 195),
+              c.boxText('イ実施言語', width: 207),
               c.boxText('${ins[6]} 語（支援担当者以外の者が通訳を担う場合）通訳者の所属・氏名 ${ins[7]} ${ins[8]}', width: 800, center: true),
             ]),
             Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              c.boxText('ウ実施予定時間', width: 195),
+              c.boxText('ウ実施予定時間', width: 207),
               c.boxText('合計 ${ins[9]} 時間', width: 800, center: true),
             ]),
             Row(),
@@ -95,11 +62,11 @@ class Page6 {
 
         // --- 5 ---
         Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          c.box(c.verticalText('５日本語学習の機会の提供'), width: 28, height: 418),
+          c.box(c.verticalText('５日本語学習の機会の提供'), width: 30, height: 418),
           Table(defaultVerticalAlignment: TableCellVerticalAlignment.full, children: [
             // --- 5.1 ---
             TableRow(children: [
-              c.boxText('支援内容', center: true, width: 195),
+              c.boxText('支援内容', center: true, width: 207),
               c.boxText('実施予定', center: true, width: 160),
               c.verticalBoxText(['委託の', '有 無'], width: 70),
               Column(children: [
@@ -113,31 +80,20 @@ class Page6 {
 
             // --- 5.2 ---
             TableRow(children: [
-              c.boxText(('ａ．日本語教室や日本語教育機関に関する入学案内の情報を提供し，必要に応じて同行して入学の手続の補助を行う'), width: 195),
-              c.box(c.booleanInputWithText(ins[10]), width: 160),
-              c.box(c.optionInput(ins[11]), width: 70),
+              c.boxText(('ａ．日本語教室や日本語教育機関に関する入学案内の情報を提供し，必要に応じて同行して入学の手続の補助を行う'), width: 207),
+              c.box(c.booleanInputWithText(ins[10], trailing1: ins[11], trailing2: ins[12]), width: 160),
+              c.box(c.optionInput(ins[13]), width: 70),
               Row(children: [
-                c.boxText(ins[12], width: 115, height: 90),
-                c.boxText(ins[13], width: 260, height: 90),
+                c.boxText(ins[14], width: 115, height: 90),
+                c.boxText(ins[15], width: 260, height: 90),
               ]),
             ]),
 
             // --- 5.3 ---
             TableRow(children: [
               c.boxText(('ｂ．自主学習のための日本語学習教材やオンラインの日本語講座に関する情報の提供し，必要に応じて日本語学習教材の入手やオンラインの日本語講座の利用契約手続の補助を行う'),
-                  width: 195),
-              c.box(c.booleanInputWithText(ins[14]), width: 160),
-              c.box(c.optionInput(ins[15]), width: 70),
-              Row(children: [
-                c.boxText(ins[16], width: 115, height: 90),
-                c.boxText(ins[17], width: 260, height: 90),
-              ]),
-            ]),
-
-            // --- 5.4 ---
-            TableRow(children: [
-              c.boxText(('ｃ．１号特定技能外国人との合意の下，日本語教師と契約して１号特定技能外国人に日本語の講習の機会を提供する'), width: 195),
-              c.box(c.booleanInputWithText(ins[18]), width: 160),
+                  width: 207),
+              c.box(c.booleanInputWithText(ins[16], trailing1: ins[17], trailing2: ins[18]), width: 160),
               c.box(c.optionInput(ins[19]), width: 70),
               Row(children: [
                 c.boxText(ins[20], width: 115, height: 90),
@@ -145,21 +101,32 @@ class Page6 {
               ]),
             ]),
 
+            // --- 5.4 ---
+            TableRow(children: [
+              c.boxText(('ｃ．１号特定技能外国人との合意の下，日本語教師と契約して１号特定技能外国人に日本語の講習の機会を提供する'), width: 207),
+              c.box(c.booleanInputWithText(ins[22], trailing1: ins[23], trailing2: ins[24]), width: 160),
+              c.box(c.optionInput(ins[25]), width: 70),
+              Row(children: [
+                c.boxText(ins[26], width: 115, height: 90),
+                c.boxText(ins[27], width: 260, height: 90),
+              ]),
+            ]),
+
             // --- 5.5 ---
             TableRow(children: [
-              c.verticalBoxText(['（自由記入）', ins[22]], width: 195),
-              c.box(c.booleanInputWithText(ins[23]), width: 160),
-              c.box(c.optionInput(ins[24]), width: 70),
+              c.verticalBoxText(['（自由記入）', ins[28]], width: 207),
+              c.box(c.booleanInput(ins[29]), width: 160),
+              c.box(c.optionInput(ins[30]), width: 70),
               Row(children: [
-                c.boxText(ins[25], width: 115, height: 90),
-                c.boxText(ins[26], width: 260, height: 90),
+                c.boxText(ins[31], width: 115, height: 90),
+                c.boxText(ins[32], width: 260, height: 90),
               ]),
             ]),
           ]),
           Column(children: [
             c.boxText('実施方法', width: 195, height: 58, center: true),
             c.boxDivider(width: 195, height: 270),
-            c.boxText(ins[27], width: 195, height: 90),
+            c.boxText(ins[33], width: 195, height: 90),
           ]),
         ])
       ]),

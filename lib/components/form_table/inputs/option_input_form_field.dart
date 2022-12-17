@@ -20,13 +20,15 @@ class _OptionInputFormFieldState extends State<OptionInputFormField> {
   @override
   Widget build(BuildContext context) {
     TextEditingController controller = widget.textEditingController ?? TextEditingController();
+    controller.text = '1';
+
     if (widget.params!.length == 2) {
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 32),
         child: Column(
           children: [
             ListTile(
-              title: Text(widget.params?['1']),
+              title: Text(widget.params?['1'] ?? '有'),
               leading: Radio<_Value>(
                 value: _Value.no,
                 groupValue: _value,
@@ -39,7 +41,7 @@ class _OptionInputFormFieldState extends State<OptionInputFormField> {
               ),
             ),
             ListTile(
-              title: Text(widget.params?['2']),
+              title: Text(widget.params?['2'] ?? '無'),
               leading: Radio<_Value>(
                 value: _Value.yes,
                 groupValue: _value,

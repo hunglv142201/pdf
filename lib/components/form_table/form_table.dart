@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:pdf_creator/components/form_table/inputs/boolean_input_form_field.dart';
+import 'package:pdf_creator/components/form_table/inputs/checkbox_input_form_field.dart';
 import 'package:pdf_creator/components/form_table/inputs/date_input_form_field.dart';
 import 'package:pdf_creator/components/form_table/inputs/long_text_input_form_field.dart';
 import 'package:pdf_creator/components/form_table/inputs/option_input_form_field.dart';
+import 'package:pdf_creator/components/form_table/inputs/three_boolean_input_form_field.dart';
 import 'package:pdf_creator/components/form_table/inputs/time_input_form_field.dart';
 // import 'package:pdf_creator/components/form_table/inputs/single_option_input_form_field.dart';
 
@@ -51,12 +53,16 @@ class FormTable extends StatelessWidget {
       case InputType.time:
         return TimeInputFormField(props.controller);
       case InputType.boolean:
-        return BooleanInputFormField(props.controller);
+        return BooleanInputFormField(props.controller, props.params);
       case InputType.option:
         return OptionInputFormField(props.controller, props.params);
       case InputType.singleOption:
         var param = {'1': ''};
         return OptionInputFormField(props.controller, param);
+      case InputType.checkbox:
+        return CheckboxInputFormField(props.controller, props.params);
+      case InputType.threeBoolean:
+        return ThreeBooleanInputFormField(props.controller, props.params);
       default:
         return Container();
     }
@@ -74,4 +80,4 @@ class TableRowProps {
   late TextEditingController controller;
 }
 
-enum InputType { text, longText, date, boolean, option, singleOption, time }
+enum InputType { text, longText, date, boolean, option, singleOption, time, checkbox, threeBoolean }

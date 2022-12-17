@@ -61,8 +61,9 @@ class Page9 {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        c.box(c.verticalText('Ⅳ支援内容（続き）'), height: 160 + 290 + 80 + 20),
+        c.box(c.verticalText('Ⅳ支援内容（続き）'), height: 160 + 290 + 80 + 20, width: 30),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,7 +72,7 @@ class Page9 {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 2),
                   height: 160,
-                  width: 25,
+                  width: 30,
                   alignment: Alignment.center,
                   decoration: _buildBoxAllSide(),
                   child: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
@@ -83,7 +84,7 @@ class Page9 {
                   defaultVerticalAlignment: TableCellVerticalAlignment.full,
                   children: [
                     TableRow(children: [
-                      c.boxText(('f．離職時に必要な行政手続について情報を提供する'), width: 197, height: 50),
+                      c.boxText(('f．離職時に必要な行政手続について情報を提供する'), width: 207, height: 50),
                       c.box(c.booleanInputWithText(inputs[0], trailing1: inputs[1], trailing2: inputs[2]), width: 160),
                       c.box(c.optionInput(inputs[3]), width: 70),
                       Row(children: [
@@ -99,7 +100,7 @@ class Page9 {
                     // --- 2.2 ---
                     TableRow(children: [
                       c.boxText(('g．倒産等により，転職のための支援 が適切に実施できなくなることが見込 まれるときは，それに備え，当該機関 に代わって支援を行う者を確保する'),
-                          width: 197, height: 60),
+                          width: 207, height: 60),
                       c.box(c.booleanInputWithText(inputs[7], trailing1: inputs[8], trailing2: inputs[9]), width: 160),
                       c.box(c.optionInput(inputs[10]), width: 70),
                       Row(children: [
@@ -115,7 +116,7 @@ class Page9 {
 
                     // --- 2.3 ---
                     TableRow(children: [
-                      c.verticalBoxText(['（自由記入）', inputs[14]], width: 195),
+                      c.verticalBoxText(['（自由記入）', inputs[14]], width: 207),
                       c.box(c.booleanInputWithText(inputs[15], trailing1: inputs[16], trailing2: inputs[17]),
                           width: 160),
                       c.box(c.optionInput(inputs[18]), width: 70),
@@ -136,14 +137,14 @@ class Page9 {
             Row(mainAxisAlignment: MainAxisAlignment.start, children: [
               Container(
                 height: 290 + 80 + 20,
-                width: 25,
+                width: 30,
                 alignment: Alignment.center,
                 decoration: _buildBoxAllSide(),
                 child: c.verticalText('９ 定期的な面談の実施・行政機関への通報'),
               ),
               Column(children: [
                 Row(children: [
-                  c.box(c.verticalText('ア   面談内容等'), height: 290 + 80, width: 20),
+                  c.box(c.verticalText('ア   面談内容等'), height: 290 + 80, width: 30),
                   Table(defaultVerticalAlignment: TableCellVerticalAlignment.full, children: [
                     // --- Title ---
                     TableRow(children: [
@@ -226,7 +227,7 @@ class Page9 {
                 Row(mainAxisAlignment: MainAxisAlignment.start, children: [
                   Container(
                       height: 20,
-                      width: 177 + 20,
+                      width: 207,
                       padding: const EdgeInsets.only(left: 10),
                       decoration: _buildBoxAllSide(),
                       alignment: Alignment.centerLeft,

@@ -67,7 +67,7 @@ class Page8 {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        c.box(c.verticalText('Ⅳ支援内容（続き）'), height: 60 + 280 + 60 + 105 + 60 + 50),
+        c.box(c.verticalText('Ⅳ支援内容（続き）'), height: 60 + 280 + 60 + 105 + 60 + 50, width: 30),
         Column(
           children: [
             Row(
@@ -77,7 +77,7 @@ class Page8 {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 2),
                   height: 60 + 105 + 60 + 50,
-                  width: 25,
+                  width: 30,
                   alignment: Alignment.center,
                   decoration: _buildBoxAllSide(),
                   child: c.verticalText(' ７ 日本人との交流促進に係る支援'),
@@ -151,7 +151,7 @@ class Page8 {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 2),
                   height: 60 + 280,
-                  width: 25,
+                  width: 30,
                   alignment: Alignment.center,
                   decoration: _buildBoxAllSide(),
                   child: c.verticalText(' ８ 非自発的離職時の転職支援'),

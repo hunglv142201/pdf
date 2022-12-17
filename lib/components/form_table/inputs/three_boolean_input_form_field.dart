@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class BooleanInputFormField extends StatefulWidget {
-  const BooleanInputFormField(this.textEditingController, this.params, {Key? key}) : super(key: key);
+class ThreeBooleanInputFormField extends StatefulWidget {
+  const ThreeBooleanInputFormField(this.textEditingController, this.params, {Key? key}) : super(key: key);
 
   final TextEditingController? textEditingController;
   final Map<String, dynamic>? params;
 
   @override
-  State<BooleanInputFormField> createState() => _BooleanInputFormFieldState();
+  State<ThreeBooleanInputFormField> createState() => _ThreeBooleanInputFormFieldState();
 }
 
-class _BooleanInputFormFieldState extends State<BooleanInputFormField> {
-  _Value _value = _Value.yes;
+class _ThreeBooleanInputFormFieldState extends State<ThreeBooleanInputFormField> {
+  _Value _value = _Value.one;
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +25,11 @@ class _BooleanInputFormFieldState extends State<BooleanInputFormField> {
           ListTile(
             title: Text(widget.params?['1'] ?? '有'),
             leading: Radio<_Value>(
-              value: _Value.yes,
+              value: _Value.one,
               groupValue: _value,
               onChanged: (_Value? value) {
                 setState(() {
-                  _value = value ?? _Value.no;
+                  _value = value ?? _Value.one;
                   controller.text = '1';
                 });
               },
@@ -38,12 +38,25 @@ class _BooleanInputFormFieldState extends State<BooleanInputFormField> {
           ListTile(
             title: Text(widget.params?['2'] ?? '無'),
             leading: Radio<_Value>(
-              value: _Value.no,
+              value: _Value.two,
               groupValue: _value,
               onChanged: (_Value? value) {
                 setState(() {
-                  _value = value ?? _Value.no;
+                  _value = value ?? _Value.two;
                   controller.text = '2';
+                });
+              },
+            ),
+          ),
+          ListTile(
+            title: Text(widget.params?['3'] ?? '無'),
+            leading: Radio<_Value>(
+              value: _Value.three,
+              groupValue: _value,
+              onChanged: (_Value? value) {
+                setState(() {
+                  _value = value ?? _Value.three;
+                  controller.text = '3';
                 });
               },
             ),
@@ -54,4 +67,4 @@ class _BooleanInputFormFieldState extends State<BooleanInputFormField> {
   }
 }
 
-enum _Value { yes, no }
+enum _Value { one, two, three }

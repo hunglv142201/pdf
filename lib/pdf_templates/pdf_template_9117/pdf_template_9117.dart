@@ -8,6 +8,8 @@ import 'package:pdf_creator/pdf_templates/pdf_template_9117/pages/page_1.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_9117/pages/page_2.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_9117/pages/page_3.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_9117/pages/page_5.dart';
+import 'package:pdf_creator/pdf_templates/pdf_template_9117/pages/page_6.dart';
+import 'package:pdf_creator/pdf_templates/pdf_template_9117/pages/page_7.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_9117/pages/page_8.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_9117/pages/page_9.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template_9117/pages/page_10.dart';
@@ -23,27 +25,16 @@ class PdfTemplate9117 extends PDFTemplate {
   @override
   Future<Uint8List> build() async {
     font = await PdfGoogleFonts.mPLUSRounded1cRegular();
-    // buildPage(Page1.buildPage([], font),
-    //     pageFormat: const PdfPageFormat(42 * cm, 29.7 * cm,
-    //         marginTop: 2 * cm, marginBottom: 2 * cm, marginLeft: 2 * cm, marginRight: 2 * cm));
-    // buildPage(Page2.buildPage([], font),
-    //     pageFormat: const PdfPageFormat(42 * cm, 29.7 * cm,
-    //         marginTop: 3 * cm, marginBottom: 2 * cm, marginLeft: 2 * cm, marginRight: 2 * cm));
-    buildPage(Page3.buildPage([], font),
-        pageFormat: const PdfPageFormat(42 * cm, 29.7 * cm,
-            marginTop: 3 * cm,
-            marginBottom: 2 * cm,
-            marginLeft: 2 * cm,
-            marginRight: 2 * cm));
-
-    // buildPage(Page4.buildPage([], font), pageFormat: PdfPageFormat.a3, pageOrientation: PageOrientation.landscape);
-    // buildPage(Page5.buildPage([], font), pageFormat: PdfPageFormat.a3, pageOrientation: PageOrientation.landscape);
-    buildPage(Page8.buildPage([], font),
-        pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
-    buildPage(Page9.buildPage([], font),
-        pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
-    buildPage(Page10.buildPage([], font),
-        pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
+    buildPage(Page1.buildPage([], font), pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
+    buildPage(Page2.buildPage([], font), pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
+    buildPage(Page3.buildPage([], font), pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
+    buildPage(Page4.buildPage([], font), pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
+    buildPage(Page5.buildPage([], font), pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
+    buildPage(Page6.buildPage([], font), pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
+    buildPage(Page7.buildPage([], font), pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
+    buildPage(Page8.buildPage([], font), pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
+    buildPage(Page9.buildPage([], font), pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
+    buildPage(Page10.buildPage([], font), pageFormat: _builtA3Format(), pageOrientation: PageOrientation.natural);
     return await pdf.save();
   }
 
