@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:pdf_creator/pdf_templates/pdf_template_11127/pdf_template_11127.dart';
-import 'package:pdf_creator/pdf_templates/pdf_template_9117/pdf_template_9117.dart';
+import 'package:pdf_creator/pdf_templates/pdf_template_14/pdf_template_14.dart';
 import 'package:printing/printing.dart';
 
 import 'pdf_viewer_screen.props.dart';
@@ -12,6 +11,101 @@ class PdfViewerScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PdfPreview(build: (format) => props.pdf ?? PdfTemplate9117([[]]).build());
+    return PdfPreview(
+        build: (format) =>
+            props.pdf ??
+            PdfTemplate14([
+              ['Hung', 'Linh'],
+              [
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1'
+              ],
+            ]).build());
   }
 }
