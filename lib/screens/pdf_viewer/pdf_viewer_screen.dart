@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:pdf_creator/pdf_templates/pdf_template_14/pdf_template_14.dart';
+import 'package:pdf_creator/pdf_templates/pdf_template_15_6_3/pdf_template_15_6_3.dart';
 import 'package:printing/printing.dart';
 
 import 'pdf_viewer_screen.props.dart';
@@ -14,8 +14,70 @@ class PdfViewerScreen extends StatelessWidget {
     return PdfPreview(
         build: (format) =>
             props.pdf ??
-            PdfTemplate14([
-              ['Hung', 'Linh'],
+            PdfTemplate1563([
+              [
+                'Hung',
+                '1999/01/22',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1', // 10
+                '1',
+                '2022/12/22',
+                '1',
+                '2022/12/22',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1', // 20
+                '2022/12/22',
+                '2022/12/22',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '2022/12/22', // 30
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1', // 40
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1', // 50
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+                '1',
+              ],
               [
                 '1',
                 '1',
