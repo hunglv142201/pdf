@@ -40,10 +40,10 @@ class Common {
     );
   }
 
-  Widget buildBooleanInput(bool isPicked, String upperText, String lowerText) {
+  Widget buildBooleanInput(bool isPicked, String upperText, String lowerText, {double fontSize = 6}) {
     return Stack(alignment: Alignment.center, children: [
-      buildNumber('', upperText, lowerText, padding: const EdgeInsets.all(1)),
-      buildText(isPicked ? '○' : '', fontSize: 14),
+      buildNumber('', upperText, lowerText, padding: const EdgeInsets.all(1), fontSize: fontSize),
+      buildText(isPicked ? '○' : '', fontSize: 8 + fontSize),
     ]);
   }
 
@@ -53,10 +53,18 @@ class Common {
     lowerTextYes = 'Yes',
     upperTextNo = '無',
     lowerTextNo = 'No',
+    double fontSize = 6,
   }) {
     return Row(children: [
-      buildBooleanInput(value == '1', upperTextYes, lowerTextYes),
-      buildBooleanInput(value == '2', upperTextNo, lowerTextNo),
+      buildBooleanInput(value == '1', upperTextYes, lowerTextYes, fontSize: fontSize),
+      buildBooleanInput(value == '2', upperTextNo, lowerTextNo, fontSize: fontSize),
     ]);
+  }
+
+  Widget buildCheckbox(bool isChecked) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 2),
+      child: Checkbox(value: isChecked, name: '', width: 8, height: 8),
+    );
   }
 }

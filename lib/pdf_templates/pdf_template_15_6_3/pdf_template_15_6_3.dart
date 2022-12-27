@@ -3,7 +3,7 @@ import 'dart:typed_data';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template.dart';
-import 'package:pdf_creator/pdf_templates/pdf_template_15_6_3/pages/page_3.dart';
+import 'package:pdf_creator/pdf_templates/pdf_template_15_6_3/pages/page_8.dart';
 import 'package:printing/printing.dart';
 
 class PdfTemplate1563 extends PDFTemplate {
@@ -17,7 +17,14 @@ class PdfTemplate1563 extends PDFTemplate {
   Future<Uint8List> build() async {
     font = await PdfGoogleFonts.mPLUSRounded1cRegular();
 
-    buildPage(Page3.buildPage(inputs[0], font), pageFormat: _buildPageFormat());
+    // buildPage(Page1.buildPage(inputs[0], font), pageFormat: _buildPageFormat());
+    // buildPage(Page2.buildPage(inputs[0], font), pageFormat: _buildPageFormat());
+    // buildPage(Page3.buildPage(inputs[0], font));
+    // buildPage(Page4.buildPage(inputs[0], font));
+    // buildPage(Page5.buildPage(inputs[0], font));
+    // buildPage(Page6.buildPage(inputs[0], font), pageFormat: _buildPageFormat());
+    // buildPage(Page7.buildPage(inputs[0], font), pageFormat: _buildPageFormat());
+    buildPage(Page8.buildPage(inputs[0], font), pageFormat: _buildPageFormat());
 
     return await pdf.save();
   }
