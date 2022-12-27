@@ -3,7 +3,7 @@ import 'dart:typed_data';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
 import 'package:pdf_creator/pdf_templates/pdf_template.dart';
-import 'package:pdf_creator/pdf_templates/pdf_template_15_6_3/pages/page_8.dart';
+import 'package:pdf_creator/pdf_templates/pdf_template_15_6_3/pages/page_10.dart';
 import 'package:printing/printing.dart';
 
 class PdfTemplate1563 extends PDFTemplate {
@@ -24,7 +24,9 @@ class PdfTemplate1563 extends PDFTemplate {
     // buildPage(Page5.buildPage(inputs[0], font));
     // buildPage(Page6.buildPage(inputs[0], font), pageFormat: _buildPageFormat());
     // buildPage(Page7.buildPage(inputs[0], font), pageFormat: _buildPageFormat());
-    buildPage(Page8.buildPage(inputs[0], font), pageFormat: _buildPageFormat());
+    // buildPage(Page8.buildPage(inputs[0], font), pageFormat: _buildPageFormat());
+    // buildPage(Page9.buildPage(inputs[0], font), pageFormat: _buildPageFormat());
+    buildPage(Page10.buildPage(inputs[0], font), pageFormat: _buildPageFormat());
 
     return await pdf.save();
   }
