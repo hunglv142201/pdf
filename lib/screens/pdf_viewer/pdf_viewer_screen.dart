@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:pdf_creator/pdf_templates/pdf_template_16_1_29/pdf_template_16_1_29.dart';
+import 'package:pdf_creator/pdf_templates/pdf_template_18_2_1/pdf_template_18_2_1.dart';
 import 'package:printing/printing.dart';
 
 import 'pdf_viewer_screen.props.dart';
@@ -14,7 +14,7 @@ class PdfViewerScreen extends StatelessWidget {
     return PdfPreview(
         build: (format) =>
             props.pdf ??
-            PdfTemplate16129([
+            PdfTemplate1821([
               [
                 '1999/01/22',
                 '1999/01/22',
@@ -79,7 +79,7 @@ class PdfViewerScreen extends StatelessWidget {
                 '1',
               ],
               [
-                '1',
+                '2022/12/22',
                 '1',
                 '1',
                 '1',
